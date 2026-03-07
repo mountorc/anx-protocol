@@ -1,6 +1,9 @@
 # macOS
 .DS_Store
 
+# Trae
+.trae/
+
 # IDE
 .vscode/
 .idea/
