@@ -1,0 +1,24 @@
+{
+  "name": "anx-frontend-protocol-skill",
+  "version": "1.0.0",
+  "description": "ANX Frontend Protocol Skill for Trae",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pack": "npm pack"
+  },
+  "files": [
+    "index.js",
+    "manifest.json",
+    "protocol"
+  ],
+  "keywords": [
+    "anx",
+    "frontend",
+    "protocol",
+    "skill",
+    "trae"
+  ],
+  "author": "ANX Team",
+  "license": "MIT"
+}

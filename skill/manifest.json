@@ -1,0 +1,19 @@
+{
+  "name": "ANX Frontend Protocol",
+  "version": "1.0.0",
+  "description": "Provides frontend programming规范 based on ANX protocol",
+  "author": "ANX Team",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "path": "^0.12.7"
+  },
+  "compatibleWith": [
+    "trae",
+    "cloude code",
+    "openclaw"
+  ]
+}
