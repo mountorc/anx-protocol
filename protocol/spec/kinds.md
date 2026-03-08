@@ -23,6 +23,13 @@ Item components are primarily input-focused elements:
 | `checkbox`     | Multiple selection (checkboxes) |
 | `button`       | Action button |
 | `text`         | Static text display |
+| `image`        | Single image upload and display |
+| `images`       | Multiple image upload and display |
+| `file`         | File upload |
+| `video`        | Video upload and display |
+| `voice`        | Voice recording and playback |
+| `json`         | JSON display and editing |
+| `list`         | JSON format list display and editing |
 
 ### 2. Card Components
 
@@ -33,5 +40,3 @@ Card components are more complex, container-like elements:
 | `table`        | Data table |
 | `box`          | Card container |
 | `form`         | Form container |
-| `json`         | JSON display and editing |
-| `list`         | JSON format list display and editing |

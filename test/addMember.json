@@ -1,0 +1,192 @@
+{
+  "kinds": [
+    {
+      "kind": "input",
+      "type": "string",
+      "nick": "memberId",
+      "title": "会员ID",
+      "defaultValue": "",
+      "must": true,
+      "placeholder": "请输入会员ID",
+      "minLength": 5,
+      "maxLength": 20,
+      "description": "唯一识别会员的ID"
+    },
+    {
+      "kind": "input",
+      "type": "string",
+      "nick": "name",
+      "title": "姓名",
+      "defaultValue": "",
+      "must": true,
+      "placeholder": "请输入姓名",
+      "minLength": 2,
+      "maxLength": 20,
+      "description": "会员的真实姓名"
+    },
+    {
+      "kind": "options",
+      "type": "string",
+      "nick": "gender",
+      "title": "性别",
+      "defaultValue": "male",
+      "must": true,
+      "description": "会员的性别"
+    },
+    {
+      "kind": "input",
+      "type": "number",
+      "nick": "age",
+      "title": "年龄",
+      "defaultValue": 18,
+      "must": true,
+      "minLength": 1,
+      "maxLength": 3,
+      "description": "会员的年龄"
+    },
+    {
+      "kind": "input",
+      "type": "string",
+      "nick": "phone",
+      "title": "手机号码",
+      "defaultValue": "",
+      "must": true,
+      "placeholder": "请输入手机号码",
+      "minLength": 11,
+      "maxLength": 11,
+      "description": "会员的手机号码"
+    },
+    {
+      "kind": "input",
+      "type": "string",
+      "nick": "email",
+      "title": "邮箱",
+      "defaultValue": "",
+      "must": false,
+      "placeholder": "请输入邮箱",
+      "minLength": 5,
+      "maxLength": 50,
+      "description": "会员的电子邮箱"
+    },
+    {
+      "kind": "options",
+      "type": "string",
+      "nick": "memberLevel",
+      "title": "会员等级",
+      "defaultValue": "bronze",
+      "must": true,
+      "description": "会员的等级"
+    },
+    {
+      "kind": "input",
+      "type": "date",
+      "nick": "registrationDate",
+      "title": "注册日期",
+      "defaultValue": "",
+      "must": true,
+      "description": "会员的注册日期"
+    },
+    {
+      "kind": "input",
+      "type": "number",
+      "nick": "points",
+      "title": "积分",
+      "defaultValue": 0,
+      "must": false,
+      "description": "会员的积分"
+    },
+    {
+      "kind": "options",
+      "type": "string",
+      "nick": "status",
+      "title": "状态",
+      "defaultValue": "active",
+      "must": true,
+      "description": "会员的状态"
+    },
+    {
+      "kind": "textarea",
+      "type": "string",
+      "nick": "address",
+      "title": "地址",
+      "defaultValue": "",
+      "must": false,
+      "placeholder": "请输入地址",
+      "minLength": 0,
+      "maxLength": 200,
+      "description": "会员的地址"
+    },
+    {
+      "kind": "input",
+      "type": "date",
+      "nick": "birthday",
+      "title": "生日",
+      "defaultValue": "",
+      "must": false,
+      "description": "会员的生日"
+    },
+    {
+      "kind": "input",
+      "type": "string",
+      "nick": "occupation",
+      "title": "职业",
+      "defaultValue": "",
+      "must": false,
+      "placeholder": "请输入职业",
+      "minLength": 0,
+      "maxLength": 50,
+      "description": "会员的职业"
+    },
+    {
+      "kind": "checkbox",
+      "type": "array",
+      "nick": "hobbies",
+      "title": "兴趣爱好",
+      "defaultValue": [],
+      "must": false,
+      "description": "会员的兴趣爱好"
+    },
+    {
+      "kind": "input",
+      "type": "string",
+      "nick": "referrer",
+      "title": "推荐人",
+      "defaultValue": "",
+      "must": false,
+      "placeholder": "请输入推荐人",
+      "minLength": 0,
+      "maxLength": 50,
+      "description": "推荐会员的人"
+    },
+    {
+      "kind": "input",
+      "type": "date",
+      "nick": "membershipExpiry",
+      "title": "会员卡有效期",
+      "defaultValue": "",
+      "must": false,
+      "description": "会员卡的有效期"
+    },
+    {
+      "kind": "input",
+      "type": "date",
+      "nick": "lastLoginDate",
+      "title": "最后登录时间",
+      "defaultValue": "",
+      "must": false,
+      "description": "会员最后登录的时间"
+    },
+    {
+      "kind": "textarea",
+      "type": "string",
+      "nick": "remarks",
+      "title": "备注",
+      "defaultValue": "",
+      "must": false,
+      "placeholder": "请输入备注",
+      "minLength": 0,
+      "maxLength": 500,
+      "description": "关于会员的备注信息"
+    }
+  ]
+}

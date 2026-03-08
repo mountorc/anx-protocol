@@ -30,6 +30,11 @@ In ANX frontend interaction protocol, a form configuration typically includes th
 | `title` | Display name (shown to users) |
 | `formula` | Calculation formula (if the field value is derived from other fields) |
 | `defaultValue` | Default value for the field |
+| `must` | Whether the field is required (true/false) |
+| `placeholder` | Placeholder text for input fields |
+| `minLength` | Minimum length for string fields |
+| `maxLength` | Maximum length for string fields |
+| `description` | Description of the field |
 
 ## Example
 
@@ -41,21 +46,32 @@ In ANX frontend interaction protocol, a form configuration typically includes th
       "type": "string",
       "nick": "username",
       "title": "Username",
-      "defaultValue": ""
+      "defaultValue": "",
+      "must": true,
+      "placeholder": "请输入用户名",
+      "minLength": 3,
+      "maxLength": 20,
+      "description": "用户的登录名称"
     },
     {
       "kind": "input",
       "type": "number",
       "nick": "age",
       "title": "Age",
-      "defaultValue": 18
+      "defaultValue": 18,
+      "must": true,
+      "minLength": 1,
+      "maxLength": 3,
+      "description": "用户的年龄"
     },
     {
       "kind": "options",
       "type": "string",
       "nick": "gender",
       "title": "Gender",
-      "defaultValue": "male"
+      "defaultValue": "male",
+      "must": true,
+      "description": "用户的性别"
     }
   ]
 }
