@@ -17,14 +17,26 @@
 ### 5. spec/formula.md
 - **Description**: Guidelines for using formulas in form fields, including syntax and usage examples.
 
-### 6. spec/page.md
+### 6. spec/filter.md
+- **Description**: Filter configuration guidelines, defining various filter formats and operators.
+
+### 7. spec/navigation.md
+- **Description**: Navigation configuration guidelines, defining menu structure and submenus.
+
+### 8. spec/page.md
 - **Description**: Page configuration guidelines, defining page structure and component organization.
 
-### 7. implement/api-types.md
+### 9. spec/table.md
+- **Description**: Table configuration guidelines, defining table structure, columns, and advanced features.
+
+### 10. spec/dataset.md
+- **Description**: Dataset configuration guidelines, defining how to use uuid_dataset to fetch data from datasets.
+
+### 11. implement/api-types.md
 - **Description**: API types and usage patterns in ANX protocol, including configuration-based and full-information APIs.
 
-### 8. implement/api-build-anx-config.md
+### 12. implement/api-build-anx-config.md
 - **Description**: Guidelines for building configuration-based API for ANX protocol.
 
-### 9. implement/api-build-anx-page.md
+### 13. implement/api-build-anx-page.md
 - **Description**: Guidelines for building full-information API for ANX protocol.
