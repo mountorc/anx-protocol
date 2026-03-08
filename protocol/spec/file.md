@@ -9,14 +9,10 @@
 ```json
 {
   "type": "file",
-  "id": "唯一标识符",
-  "name": "组件名称",
-  "label": "标签",
   "multiple": false,
   "accept": "文件类型",
   "maxSize": 10485760,
   "required": false,
-  "description": "描述",
   "value": "文件路径",
   "preview": true
 }
@@ -27,14 +23,10 @@
 | 字段名 | 类型 | 必选 | 说明 |
 |-------|------|------|------|
 | type | string | 是 | 组件类型，固定为 "file" |
-| id | string | 是 | 组件唯一标识符 |
-| name | string | 否 | 组件名称 |
-| label | string | 否 | 组件标签 |
 | multiple | boolean | 否 | 是否支持多文件上传，默认为 false |
 | accept | string | 否 | 可接受的文件类型，如 ".jpg,.png" 或 "image/*" |
 | maxSize | number | 否 | 文件最大大小（字节），默认为 10MB |
 | required | boolean | 否 | 是否必填，默认为 false |
-| description | string | 否 | 组件描述 |
 | value | string/array | 否 | 文件路径或文件路径数组 |
 | preview | boolean | 否 | 是否支持文件预览，默认为 true |
 

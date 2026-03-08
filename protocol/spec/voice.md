@@ -9,13 +9,9 @@
 ```json
 {
   "type": "voice",
-  "id": "唯一标识符",
-  "name": "组件名称",
-  "label": "标签",
   "maxDuration": 60,
   "format": "audio/mp3",
   "required": false,
-  "description": "描述",
   "value": "音频文件路径",
   "controls": true
 }
@@ -26,13 +22,9 @@
 | 字段名 | 类型 | 必选 | 说明 |
 |-------|------|------|------|
 | type | string | 是 | 组件类型，固定为 "voice" |
-| id | string | 是 | 组件唯一标识符 |
-| name | string | 否 | 组件名称 |
-| label | string | 否 | 组件标签 |
 | maxDuration | number | 否 | 最大录音时长（秒），默认为 60 秒 |
 | format | string | 否 | 音频格式，如 "audio/mp3"、"audio/wav" 等 |
 | required | boolean | 否 | 是否必填，默认为 false |
-| description | string | 否 | 组件描述 |
 | value | string | 否 | 音频文件路径 |
 | controls | boolean | 否 | 是否显示播放控制，默认为 true |
 
