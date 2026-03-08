@@ -8,9 +8,7 @@
 
 ```json
 {
-  "type": "list",
-  "id": "唯一标识符",
-  "name": "组件名称",
+  "kind": "list",
   "dataSource": "数据来源",
   "template": "列表项模板",
   "layout": "布局方式",
@@ -32,9 +30,7 @@
 
 | 字段名 | 类型 | 必选 | 说明 |
 |-------|------|------|------|
-| type | string | 是 | 组件类型，固定为 "list" |
-| id | string | 是 | 组件唯一标识符 |
-| name | string | 否 | 组件名称 |
+| kind | string | 是 | 组件类型，固定为 "list" |
 | dataSource | string/object | 是 | 数据来源，可以是 API 地址或本地数据对象 |
 | template | string | 是 | 列表项模板名称 |
 | layout | string | 否 | 布局方式，如 "vertical"、"horizontal"、"grid" 等 |
@@ -84,7 +80,7 @@
 ```json
 [
   {
-    "type": "button",
+    "kind": "button",
     "label": "操作按钮",
     "action": "actionName",
     "params": {
@@ -100,7 +96,7 @@
 
 ```json
 {
-  "type": "list",
+  "kind": "list",
   "id": "userList",
   "name": "用户列表",
   "dataSource": "/api/users",
@@ -117,7 +113,7 @@
 
 ```json
 {
-  "type": "list",
+  "kind": "list",
   "id": "productList",
   "name": "产品列表",
   "dataSource": "/api/products",
@@ -133,14 +129,14 @@
 
 ```json
 {
-  "type": "list",
+  "kind": "list",
   "id": "orderList",
   "name": "订单列表",
   "dataSource": "/api/orders",
   "template": "order-item",
   "actions": [
     {
-      "type": "button",
+      "kind": "button",
       "label": "查看",
       "action": "viewOrder",
       "params": {
@@ -148,7 +144,7 @@
       }
     },
     {
-      "type": "button",
+      "kind": "button",
       "label": "编辑",
       "action": "editOrder",
       "params": {
