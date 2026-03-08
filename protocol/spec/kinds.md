@@ -30,6 +30,11 @@ Item components are primarily input-focused elements:
 | `voice`        | Voice recording and playback |
 | `json`         | JSON display and editing |
 | `list`         | JSON format list display and editing |
+| `time`         | Time input control |
+| `datetime`     | Date and time input control |
+| `color`        | Color selection control |
+| `province`     | Province selection control |
+| `city`         | City selection control |
 
 ### 2. Card Components
 
