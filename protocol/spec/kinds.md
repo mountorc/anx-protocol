@@ -32,6 +32,8 @@ Item components are primarily input-focused elements:
 | `list`         | JSON format list display and editing |
 | `time`         | Time input control |
 | `date`         | Date input control |
+| `month`        | Month input control |
+| `year`         | Year input control |
 | `datetime`     | Date and time input control |
 | `color`        | Color selection control |
 | `province`     | Province selection control |
