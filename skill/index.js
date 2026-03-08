@@ -9,12 +9,60 @@ class ANXFrontendProtocolSkill {
       // Fallback to parent directory
       this.protocolPath = path.join(__dirname, '../protocol');
     }
+    this.catalogPath = path.join(this.protocolPath, 'catalog.md');
+    this.catalogIndex = null;
   }
 
-  // Read protocol files
-  async readProtocolFile(filename) {
-    const filePath = path.join(this.protocolPath, filename);
+  // Parse catalog.md to create an index
+  async parseCatalog() {
     try {
+      const catalogContent = fs.readFileSync(this.catalogPath, 'utf8');
+      const lines = catalogContent.split('\n');
+      const index = {};
+
+      lines.forEach(line => {
+        // Match lines like "### 1. spec/main.md"
+        const match = line.match(/### \d+\.\s+([^\n]+)/);
+        if (match) {
+          const filePath = match[1].trim();
+          // Extract filename from path
+          const filename = path.basename(filePath);
+          index[filename] = filePath;
+        }
+      });
+
+      this.catalogIndex = index;
+      return index;
+    } catch (error) {
+      console.error('Error parsing catalog:', error);
+      return {};
+    }
+  }
+
+  // Get catalog index
+  async getCatalogIndex() {
+    if (!this.catalogIndex) {
+      await this.parseCatalog();
+    }
+    return this.catalogIndex;
+  }
+
+  // Read protocol files using catalog index
+  async readProtocolFile(filename) {
+    try {
+      // Get catalog index
+      const index = await this.getCatalogIndex();
+      
+      // Find the file path in the catalog
+      let filePath;
+      if (index[filename]) {
+        // Use the path from catalog
+        filePath = path.join(this.protocolPath, path.basename(index[filename]));
+      } else {
+        // Fallback to direct path
+        filePath = path.join(this.protocolPath, filename);
+      }
+
       const content = fs.readFileSync(filePath, 'utf8');
       return content;
     } catch (error) {
@@ -22,13 +70,19 @@ class ANXFrontendProtocolSkill {
     }
   }
 
-  // Get all protocol files
+  // Get all protocol files from catalog
   async getProtocolFiles() {
     try {
-      const files = fs.readdirSync(this.protocolPath);
-      return files.filter(file => file.endsWith('.md'));
+      const index = await this.getCatalogIndex();
+      return Object.keys(index);
     } catch (error) {
-      return [];
+      // Fallback to directory listing
+      try {
+        const files = fs.readdirSync(this.protocolPath);
+        return files.filter(file => file.endsWith('.md'));
+      } catch (fallbackError) {
+        return [];
+      }
     }
   }
 
@@ -99,4 +153,5 @@ if (require.main === module) {
   const skill = new ANXFrontendProtocolSkill();
   skill.healthCheck().then(console.log);
   skill.getFrontendGuidelines().then(console.log);
+  skill.getProtocolFiles().then(console.log);
 }
