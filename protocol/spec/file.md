@@ -8,7 +8,7 @@
 
 ```json
 {
-  "type": "file",
+  "kind": "file",
   "multiple": false,
   "accept": "文件类型",
   "maxSize": 10485760,
@@ -22,7 +22,7 @@
 
 | 字段名 | 类型 | 必选 | 说明 |
 |-------|------|------|------|
-| type | string | 是 | 组件类型，固定为 "file" |
+| kind | string | 是 | 组件类型，固定为 "file" |
 | multiple | boolean | 否 | 是否支持多文件上传，默认为 false |
 | accept | string | 否 | 可接受的文件类型，如 ".jpg,.png" 或 "image/*" |
 | maxSize | number | 否 | 文件最大大小（字节），默认为 10MB |
@@ -36,7 +36,7 @@
 
 ```json
 {
-  "type": "file",
+  "kind": "file",
   "id": "avatar",
   "name": "头像",
   "label": "请上传头像",
@@ -51,7 +51,7 @@
 
 ```json
 {
-  "type": "file",
+  "kind": "file",
   "id": "attachments",
   "name": "附件",
   "label": "请上传附件",
@@ -66,7 +66,7 @@
 
 ```json
 {
-  "type": "file",
+  "kind": "file",
   "id": "productImages",
   "name": "产品图片",
   "label": "请上传产品图片",

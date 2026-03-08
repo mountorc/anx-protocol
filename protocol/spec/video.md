@@ -8,7 +8,7 @@
 
 ```json
 {
-  "type": "video",
+  "kind": "video",
   "multiple": false,
   "accept": "video/*",
   "maxSize": 104857600,
@@ -24,7 +24,7 @@
 
 | 字段名 | 类型 | 必选 | 说明 |
 |-------|------|------|------|
-| type | string | 是 | 组件类型，固定为 "video" |
+| kind | string | 是 | 组件类型，固定为 "video" |
 | multiple | boolean | 否 | 是否支持多视频上传，默认为 false |
 | accept | string | 否 | 可接受的视频类型，如 "video/*" 或 ".mp4,.avi" |
 | maxSize | number | 否 | 文件最大大小（字节），默认为 100MB |
@@ -40,7 +40,7 @@
 
 ```json
 {
-  "type": "video",
+  "kind": "video",
   "id": "introductionVideo",
   "name": "介绍视频",
   "label": "请上传介绍视频",
@@ -56,7 +56,7 @@
 
 ```json
 {
-  "type": "video",
+  "kind": "video",
   "id": "trainingVideos",
   "name": "培训视频",
   "label": "请上传培训视频",
@@ -72,7 +72,7 @@
 
 ```json
 {
-  "type": "video",
+  "kind": "video",
   "id": "productDemo",
   "name": "产品演示",
   "label": "请上传产品演示视频",

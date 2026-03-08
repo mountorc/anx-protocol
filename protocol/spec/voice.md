@@ -8,7 +8,7 @@
 
 ```json
 {
-  "type": "voice",
+  "kind": "voice",
   "maxDuration": 60,
   "format": "audio/mp3",
   "required": false,
@@ -21,7 +21,7 @@
 
 | 字段名 | 类型 | 必选 | 说明 |
 |-------|------|------|------|
-| type | string | 是 | 组件类型，固定为 "voice" |
+| kind | string | 是 | 组件类型，固定为 "voice" |
 | maxDuration | number | 否 | 最大录音时长（秒），默认为 60 秒 |
 | format | string | 否 | 音频格式，如 "audio/mp3"、"audio/wav" 等 |
 | required | boolean | 否 | 是否必填，默认为 false |
@@ -34,7 +34,7 @@
 
 ```json
 {
-  "type": "voice",
+  "kind": "voice",
   "id": "voiceMessage",
   "name": "语音消息",
   "label": "请录制语音消息",
@@ -49,7 +49,7 @@
 
 ```json
 {
-  "type": "voice",
+  "kind": "voice",
   "id": "interviewRecording",
   "name": "面试录音",
   "label": "请录制面试回答",
@@ -64,7 +64,7 @@
 
 ```json
 {
-  "type": "voice",
+  "kind": "voice",
   "id": "feedbackVoice",
   "name": "语音反馈",
   "label": "语音反馈（可选）",
