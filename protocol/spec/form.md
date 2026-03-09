@@ -35,6 +35,8 @@ In ANX frontend interaction protocol, a form configuration typically includes th
 | `minLength` | Minimum length for string fields |
 | `maxLength` | Maximum length for string fields |
 | `description` | Description of the field |
+| `options` | Array of options for select fields |
+| `optionsSet` | Configuration for loading options from a dataset |
 
 ## Example
 
@@ -72,6 +74,22 @@ In ANX frontend interaction protocol, a form configuration typically includes th
       "defaultValue": "male",
       "must": true,
       "description": "用户的性别"
+    },
+    {
+      "kind": "options",
+      "type": "string",
+      "nick": "category",
+      "title": "Category",
+      "defaultValue": "",
+      "must": true,
+      "description": "产品分类",
+      "optionsSet": {
+        "dataset": {
+          "uuid_dataset": "categories_dataset"
+        },
+        "labelNick": "categoryName",
+        "valueNick": "categoryId"
+      }
     }
   ]
 }

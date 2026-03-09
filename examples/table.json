@@ -1,0 +1,101 @@
+{
+  "table": {
+    "title": "用户列表",
+    "nick": "userTable",
+    "uuid_dataset": "users_dataset",
+    "columns": [
+      {
+        "title": "用户ID",
+        "nick": "userId",
+        "width": 100,
+        "sortable": true
+      },
+      {
+        "title": "姓名",
+        "nick": "userName",
+        "width": 150,
+        "sortable": true
+      },
+      {
+        "title": "邮箱",
+        "nick": "userEmail",
+        "width": 200,
+        "sortable": true
+      },
+      {
+        "title": "电话",
+        "nick": "userPhone",
+        "width": 150
+      },
+      {
+        "title": "注册日期",
+        "nick": "registrationDate",
+        "width": 120,
+        "sortable": true
+      },
+      {
+        "title": "状态",
+        "nick": "status",
+        "width": 100,
+        "sortable": true
+      },
+      {
+        "title": "操作",
+        "nick": "actions",
+        "width": 120,
+        "actions": [
+          {
+            "title": "编辑",
+            "nick": "edit",
+            "tapSet": {
+              "navigateTo": {
+                "path": "/edit-user",
+                "paramMap": {
+                  "userId": "userId"
+                }
+              }
+            }
+          },
+          {
+            "title": "删除",
+            "nick": "delete",
+            "tapSet": {
+              "requestSet": {
+                "url": "/api/delete-user",
+                "paramMap": {
+                  "userId": "userId"
+                }
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "pagination": {
+      "pageSize": 10,
+      "pageSizeOptions": [10, 20, 50, 100]
+    },
+    "filter": {
+      "fields": [
+        {
+          "kind": "input",
+          "type": "string",
+          "nick": "search",
+          "title": "搜索",
+          "placeholder": "请输入搜索关键词"
+        },
+        {
+          "kind": "options",
+          "type": "string",
+          "nick": "status",
+          "title": "状态",
+          "options": [
+            {"label": "全部", "value": ""},
+            {"label": "活跃", "value": "active"},
+            {"label": "禁用", "value": "inactive"}
+          ]
+        }
+      ]
+    }
+  }
+}

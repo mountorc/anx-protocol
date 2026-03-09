@@ -1,0 +1,158 @@
+{
+  "page": {
+    "title": "用户管理",
+    "nick": "userManagement",
+    "uuid_page": "user_management_page",
+    "layout": {
+      "type": "grid",
+      "columns": 12,
+      "rows": [
+        {
+          "height": "auto",
+          "columns": [
+            {
+              "span": 12,
+              "component": "header",
+              "config": {
+                "title": "用户管理系统",
+                "subtitle": "管理所有用户信息"
+              }
+            }
+          ]
+        },
+        {
+          "height": "auto",
+          "columns": [
+            {
+              "span": 3,
+              "component": "navigation",
+              "config": {
+                "menu": [
+                  {
+                    "title": "用户列表",
+                    "nick": "userList",
+                    "uuid_page": "user_list_page",
+                    "url_page": "/users"
+                  },
+                  {
+                    "title": "添加用户",
+                    "nick": "addUser",
+                    "uuid_page": "add_user_page",
+                    "url_page": "/users/add"
+                  },
+                  {
+                    "title": "用户统计",
+                    "nick": "userStats",
+                    "uuid_page": "user_stats_page",
+                    "url_page": "/users/stats"
+                  }
+                ]
+              }
+            },
+            {
+              "span": 9,
+              "component": "content",
+              "config": {
+                "sections": [
+                  {
+                    "title": "用户列表",
+                    "nick": "userTableSection",
+                    "component": "table",
+                    "config": {
+                      "title": "用户列表",
+                      "nick": "userTable",
+                      "uuid_dataset": "users_dataset",
+                      "columns": [
+                        {
+                          "title": "用户ID",
+                          "nick": "userId",
+                          "width": 100
+                        },
+                        {
+                          "title": "姓名",
+                          "nick": "userName",
+                          "width": 150
+                        },
+                        {
+                          "title": "邮箱",
+                          "nick": "userEmail",
+                          "width": 200
+                        },
+                        {
+                          "title": "操作",
+                          "nick": "actions",
+                          "width": 120,
+                          "actions": [
+                            {
+                              "title": "编辑",
+                              "nick": "edit",
+                              "tapSet": {
+                                "navigateTo": {
+                                  "path": "/edit-user",
+                                  "paramMap": {
+                                    "userId": "userId"
+                                  }
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "title": "添加用户",
+                    "nick": "addUserSection",
+                    "component": "form",
+                    "config": {
+                      "title": "添加新用户",
+                      "nick": "addUserForm",
+                      "kinds": [
+                        {
+                          "kind": "input",
+                          "type": "string",
+                          "nick": "userName",
+                          "title": "姓名",
+                          "must": true
+                        },
+                        {
+                          "kind": "input",
+                          "type": "string",
+                          "nick": "userEmail",
+                          "title": "邮箱",
+                          "must": true
+                        },
+                        {
+                          "kind": "input",
+                          "type": "string",
+                          "nick": "userPhone",
+                          "title": "电话",
+                          "must": true
+                        }
+                      ],
+                      "triggerSet": {
+                        "submit": {
+                          "updateData": {
+                            "tableName": "users",
+                            "paramMap": {
+                              "user_name": "userName",
+                              "email_address": "userEmail",
+                              "phone_number": "userPhone"
+                            },
+                            "uniqueMap": {
+                              "user_id": "userId"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

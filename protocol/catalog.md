@@ -47,11 +47,32 @@
 ### 15. spec/updateData.md
 - **Description**: UpdateData configuration guidelines, defining how to update or insert data based on unique identifiers.
 
-### 16. implement/api-types.md
+### 16. spec/editState.md
+- **Description**: Edit state configuration guidelines, defining how to manage editing states in the interface.
+
+### 17. spec/file.md
+- **Description**: File component guidelines, defining how to handle file uploads and downloads.
+
+### 18. spec/json.md
+- **Description**: JSON configuration guidelines, defining how to use JSON format in the protocol.
+
+### 19. spec/markdown.md
+- **Description**: Markdown component guidelines, defining how to display Markdown content in the interface.
+
+### 20. spec/options.md
+- **Description**: Options configuration guidelines, defining how to handle option lists and selections.
+
+### 21. spec/video.md
+- **Description**: Video component guidelines, defining how to display video content in the interface.
+
+### 22. spec/voice.md
+- **Description**: Voice component guidelines, defining how to handle voice input and output.
+
+### 23. implement/api-types.md
 - **Description**: API types and usage patterns in ANX protocol, including configuration-based and full-information APIs.
 
-### 17. implement/api-build-anx-config.md
+### 24. implement/api-build-anx-config.md
 - **Description**: Guidelines for building configuration-based API for ANX protocol.
 
-### 18. implement/api-build-anx-page.md
+### 25. implement/api-build-anx-page.md
 - **Description**: Guidelines for building full-information API for ANX protocol.

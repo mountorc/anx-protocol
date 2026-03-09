@@ -1,0 +1,82 @@
+{
+  "triggerSet": {
+    "input": {
+      "updateData": {
+        "tableName": "users",
+        "paramMap": {
+          "user_name": "userName",
+          "email_address": "userEmail"
+        },
+        "uniqueMap": {
+          "user_id": "userId"
+        }
+      }
+    },
+    "focus": {
+      "requestSet": {
+        "url": "/api/get-user-suggestions",
+        "paramMap": {
+          "field": "currentField"
+        }
+      }
+    },
+    "blur": {
+      "requestSet": {
+        "url": "/api/validate-field",
+        "paramMap": {
+          "field": "currentField",
+          "value": "currentValue"
+        }
+      }
+    },
+    "submit": {
+      "updateData": {
+        "tableName": "users",
+        "paramMap": {
+          "user_name": "userName",
+          "email_address": "userEmail",
+          "phone_number": "userPhone"
+        },
+        "uniqueMap": {
+          "user_id": "userId"
+        }
+      },
+      "navigateTo": {
+        "path": "/users",
+        "paramMap": {}
+      }
+    },
+    "longtap": {
+      "navigateTo": {
+        "path": "/edit-user",
+        "paramMap": {
+          "userId": "userId"
+        }
+      }
+    },
+    "doubletap": {
+      "requestSet": {
+        "url": "/api/toggle-user-status",
+        "paramMap": {
+          "userId": "userId"
+        }
+      }
+    },
+    "clear": {
+      "requestSet": {
+        "url": "/api/clear-user-cache",
+        "paramMap": {
+          "userId": "userId"
+        }
+      }
+    }
+  },
+  "tapSet": {
+    "navigateTo": {
+      "path": "/user-details",
+      "paramMap": {
+        "userId": "userId"
+      }
+    }
+  }
+}

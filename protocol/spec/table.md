@@ -13,11 +13,13 @@ A typical table configuration includes the following structure:
   "kind": "table",
   "nick": "table_name",
   "title": "Table Title",
-  "uuid_dataset": "数据集UUID",
-  "url_dataset": "数据URL地址",
-  "titles": [
+  "dataset": {
+    "uuid_dataset": "数据集UUID",
+    "url_dataset": "数据URL地址"
+  },
+  "labels": [
     {
-      "title": "显示名",
+      "label": "显示名",
       "nick": "字段名",
       "kind": "列格式",
       "type": "字段类型",
@@ -49,29 +51,39 @@ A typical table configuration includes the following structure:
 | `kind` | Component type, must be "table" | Yes |
 | `nick` | Unique identifier for the table | Yes |
 | `title` | Table title displayed to users | Yes |
-| `uuid_dataset` | UUID of the dataset to fetch data from | No |
-| `url_dataset` | URL to fetch data from (alternative to uuid_dataset) | No |
-| `titles` | Array of column definitions | Yes |
+| `dataset` | Dataset configuration | No |
+| `labels` | Array of column definitions | Yes |
 | `data` | Table data (JSON list) | No |
 | `pagination` | Pagination configuration | No |
 | `filter` | Filter configuration | No |
 | `sort` | Sort configuration | No |
 
-> Note: You must provide either `uuid_dataset` or `url_dataset`.
+## Dataset Structure
 
-## Title Structure
-
-Each column in the `titles` array includes the following fields:
+For detailed information about dataset configuration, please refer to the [Dataset Configuration Guide](dataset.md).
 
 | Field | Description | Required |
 |-------|-------------|----------|
-| `title` | Display name | Yes |
+| `uuid_dataset` | UUID of the dataset to fetch data from | No |
+| `url_dataset` | URL to fetch data from (alternative to uuid_dataset) | No |
+
+> Note: You must provide either `uuid_dataset` or `url_dataset` in the dataset configuration.
+
+## Label Structure
+
+Each column in the `labels` array includes the following fields:
+
+| Field | Description | Required |
+|-------|-------------|----------|
+| `label` | Display name | Yes |
 | `nick` | Field name | Yes |
 | `kind` | Column format | No |
 | `type` | Field type | No |
 | `formula` | Calculation formula | No |
 | `width` | Column width (numeric, default px) | No |
 | `hide` | Whether to hide the column (true/false) | No |
+| `options` | Array of options for selectable columns | No |
+| `optionsSet` | Configuration for loading options from a dataset | No |
 
 ## Pagination Structure
 
@@ -97,10 +109,12 @@ Each column in the `titles` array includes the following fields:
   "kind": "table",
   "nick": "users_table",
   "title": "Users",
-  "uuid_dataset": "users_dataset_123",
-  "titles": [
+  "dataset": {
+    "uuid_dataset": "users_dataset_123"
+  },
+  "labels": [
     {
-      "title": "ID",
+      "label": "ID",
       "nick": "id",
       "kind": "text",
       "type": "number",
@@ -108,7 +122,7 @@ Each column in the `titles` array includes the following fields:
       "hide": false
     },
     {
-      "title": "Name",
+      "label": "Name",
       "nick": "name",
       "kind": "text",
       "type": "string",
@@ -116,7 +130,7 @@ Each column in the `titles` array includes the following fields:
       "hide": false
     },
     {
-      "title": "Email",
+      "label": "Email",
       "nick": "email",
       "kind": "text",
       "type": "string",
@@ -124,7 +138,7 @@ Each column in the `titles` array includes the following fields:
       "hide": false
     },
     {
-      "title": "Status",
+      "label": "Status",
       "nick": "status",
       "kind": "text",
       "type": "string",
@@ -132,7 +146,22 @@ Each column in the `titles` array includes the following fields:
       "hide": false
     },
     {
-      "title": "Created At",
+      "label": "Category",
+      "nick": "category_id",
+      "kind": "text",
+      "type": "string",
+      "width": 150,
+      "hide": false,
+      "optionsSet": {
+        "dataset": {
+          "uuid_dataset": "categories_dataset"
+        },
+        "labelNick": "categoryName",
+        "valueNick": "categoryId"
+      }
+    },
+    {
+      "label": "Created At",
       "nick": "created_at",
       "kind": "text",
       "type": "datetime",
@@ -140,7 +169,7 @@ Each column in the `titles` array includes the following fields:
       "hide": false
     },
     {
-      "title": "Action",
+      "label": "Action",
       "nick": "action",
       "kind": "text",
       "type": "string",
@@ -171,10 +200,12 @@ Each column in the `titles` array includes the following fields:
   "kind": "table",
   "nick": "products_table",
   "title": "Products",
-  "url_dataset": "https://api.example.com/products",
-  "titles": [
+  "dataset": {
+    "url_dataset": "https://api.example.com/products"
+  },
+  "labels": [
     {
-      "title": "Product ID",
+      "label": "Product ID",
       "nick": "id",
       "kind": "text",
       "type": "string",
@@ -182,7 +213,7 @@ Each column in the `titles` array includes the following fields:
       "hide": false
     },
     {
-      "title": "Product Name",
+      "label": "Product Name",
       "nick": "name",
       "kind": "text",
       "type": "string",
@@ -190,7 +221,7 @@ Each column in the `titles` array includes the following fields:
       "hide": false
     },
     {
-      "title": "Price",
+      "label": "Price",
       "nick": "price",
       "kind": "text",
       "type": "number",
@@ -198,7 +229,7 @@ Each column in the `titles` array includes the following fields:
       "hide": false
     },
     {
-      "title": "Stock",
+      "label": "Stock",
       "nick": "stock",
       "kind": "text",
       "type": "number",
@@ -263,7 +294,7 @@ Custom formatters can be used to display data in a more user-friendly way:
 ```json
 {
   "field": "status",
-  "title": "Status",
+  "label": "Status",
   "formatter": "statusFormatter"
 }
 ```
@@ -275,7 +306,7 @@ You can add action buttons to each row:
 ```json
 {
   "field": "action",
-  "title": "Action",
+  "label": "Action",
   "formatter": "actionFormatter"
 }
 ```
@@ -289,14 +320,18 @@ For complex data, you can implement nested tables:
   "kind": "table",
   "nick": "orders_table",
   "title": "Orders",
-  "uuid_dataset": "orders_dataset_123",
-  "titles": [
+  "dataset": {
+    "uuid_dataset": "orders_dataset_123"
+  },
+  "labels": [
     // Main table columns
   ],
   "expandable": {
     "children": {
-      "url_dataset": "https://api.example.com/order-items",
-      "titles": [
+      "dataset": {
+        "url_dataset": "https://api.example.com/order-items"
+      },
+      "labels": [
         // Nested table columns
       ]
     }
