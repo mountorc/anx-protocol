@@ -32,11 +32,26 @@
 ### 10. spec/dataset.md
 - **Description**: Dataset configuration guidelines, defining how to use uuid_dataset to fetch data from datasets.
 
-### 11. implement/api-types.md
+### 11. spec/text.md
+- **Description**: Text processing guidelines, defining variable and formula substitution in text content.
+
+### 12. spec/html.md
+- **Description**: HTML component guidelines, defining how to display HTML content in the interface.
+
+### 13. spec/style.md
+- **Description**: Style configuration guidelines, defining JSON and text format for CSS styles.
+
+### 14. spec/trigger-and-tap.md
+- **Description**: Trigger and tap configuration guidelines, defining event-driven actions for UI elements.
+
+### 15. spec/updateData.md
+- **Description**: UpdateData configuration guidelines, defining how to update or insert data based on unique identifiers.
+
+### 16. implement/api-types.md
 - **Description**: API types and usage patterns in ANX protocol, including configuration-based and full-information APIs.
 
-### 12. implement/api-build-anx-config.md
+### 17. implement/api-build-anx-config.md
 - **Description**: Guidelines for building configuration-based API for ANX protocol.
 
-### 13. implement/api-build-anx-page.md
+### 18. implement/api-build-anx-page.md
 - **Description**: Guidelines for building full-information API for ANX protocol.

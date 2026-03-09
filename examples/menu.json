@@ -1,0 +1,84 @@
+[
+  {
+    "title": "首页",
+    "nick": "home",
+    "uuid_page": "home_123",
+    "url_page": "/home"
+  },
+  {
+    "title": "商品分类",
+    "nick": "categories",
+    "uuid_page": "categories_456",
+    "url_page": "/categories",
+    "items": [
+      {
+        "title": "电子产品",
+        "nick": "electronics",
+        "uuid_page": "electronics_789",
+        "url_page": "/categories/electronics"
+      },
+      {
+        "title": "服装",
+        "nick": "clothing",
+        "uuid_page": "clothing_101",
+        "url_page": "/categories/clothing"
+      },
+      {
+        "title": "食品",
+        "nick": "food",
+        "uuid_page": "food_102",
+        "url_page": "/categories/food"
+      },
+      {
+        "title": "家居用品",
+        "nick": "home-goods",
+        "uuid_page": "home-goods_103",
+        "url_page": "/categories/home-goods"
+      }
+    ]
+  },
+  {
+    "title": "购物车",
+    "nick": "cart",
+    "uuid_page": "cart_104",
+    "url_page": "/cart"
+  },
+  {
+    "title": "个人中心",
+    "nick": "user",
+    "uuid_page": "user_105",
+    "url_page": "/user",
+    "items": [
+      {
+        "title": "我的订单",
+        "nick": "orders",
+        "uuid_page": "orders_106",
+        "url_page": "/user/orders"
+      },
+      {
+        "title": "收货地址",
+        "nick": "addresses",
+        "uuid_page": "addresses_107",
+        "url_page": "/user/addresses"
+      },
+      {
+        "title": "我的收藏",
+        "nick": "favorites",
+        "uuid_page": "favorites_108",
+        "url_page": "/user/favorites"
+      },
+      {
+        "title": "优惠券",
+        "nick": "coupons",
+        "uuid_page": "coupons_109",
+        "url_page": "/user/coupons"
+      },
+      {
+        "title": "设置",
+        "nick": "settings",
+        "uuid_page": "settings_110",
+        "url_page": "/user/settings"
+      }
+    ]
+  }
+]

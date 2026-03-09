@@ -39,6 +39,7 @@ Item components are primarily input-focused elements:
 | `province`     | Province selection control |
 | `city`         | City selection control |
 | `markdown`     | Markdown content display |
+| `html`         | HTML content display |
 
 ### 2. Card Components
 
