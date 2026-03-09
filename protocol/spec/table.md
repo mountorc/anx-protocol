@@ -17,9 +17,9 @@ A typical table configuration includes the following structure:
     "uuid_dataset": "数据集UUID",
     "url_dataset": "数据URL地址"
   },
-  "labels": [
+  "titles": [
     {
-      "label": "显示名",
+      "title": "显示名",
       "nick": "字段名",
       "kind": "列格式",
       "type": "字段类型",
@@ -52,7 +52,7 @@ A typical table configuration includes the following structure:
 | `nick` | Unique identifier for the table | Yes |
 | `title` | Table title displayed to users | Yes |
 | `dataset` | Dataset configuration | No |
-| `labels` | Array of column definitions | Yes |
+| `titles` | Array of column definitions | Yes |
 | `data` | Table data (JSON list) | No |
 | `pagination` | Pagination configuration | No |
 | `filter` | Filter configuration | No |
@@ -69,13 +69,13 @@ For detailed information about dataset configuration, please refer to the [Datas
 
 > Note: You must provide either `uuid_dataset` or `url_dataset` in the dataset configuration.
 
-## Label Structure
+## Title Structure
 
-Each column in the `labels` array includes the following fields:
+Each column in the `titles` array includes the following fields:
 
 | Field | Description | Required |
 |-------|-------------|----------|
-| `label` | Display name | Yes |
+| `title` | Display name | Yes |
 | `nick` | Field name | Yes |
 | `kind` | Column format | No |
 | `type` | Field type | No |
@@ -112,9 +112,9 @@ Each column in the `labels` array includes the following fields:
   "dataset": {
     "uuid_dataset": "users_dataset_123"
   },
-  "labels": [
+  "titles": [
     {
-      "label": "ID",
+      "title": "ID",
       "nick": "id",
       "kind": "text",
       "type": "number",
@@ -122,7 +122,7 @@ Each column in the `labels` array includes the following fields:
       "hide": false
     },
     {
-      "label": "Name",
+      "title": "Name",
       "nick": "name",
       "kind": "text",
       "type": "string",
@@ -130,7 +130,7 @@ Each column in the `labels` array includes the following fields:
       "hide": false
     },
     {
-      "label": "Email",
+      "title": "Email",
       "nick": "email",
       "kind": "text",
       "type": "string",
@@ -138,7 +138,7 @@ Each column in the `labels` array includes the following fields:
       "hide": false
     },
     {
-      "label": "Status",
+      "title": "Status",
       "nick": "status",
       "kind": "text",
       "type": "string",
@@ -146,7 +146,7 @@ Each column in the `labels` array includes the following fields:
       "hide": false
     },
     {
-      "label": "Category",
+      "title": "Category",
       "nick": "category_id",
       "kind": "text",
       "type": "string",
@@ -161,7 +161,7 @@ Each column in the `labels` array includes the following fields:
       }
     },
     {
-      "label": "Created At",
+      "title": "Created At",
       "nick": "created_at",
       "kind": "text",
       "type": "datetime",
@@ -169,7 +169,7 @@ Each column in the `labels` array includes the following fields:
       "hide": false
     },
     {
-      "label": "Action",
+      "title": "Action",
       "nick": "action",
       "kind": "text",
       "type": "string",
@@ -203,9 +203,9 @@ Each column in the `labels` array includes the following fields:
   "dataset": {
     "url_dataset": "https://api.example.com/products"
   },
-  "labels": [
+  "titles": [
     {
-      "label": "Product ID",
+      "title": "Product ID",
       "nick": "id",
       "kind": "text",
       "type": "string",
@@ -213,7 +213,7 @@ Each column in the `labels` array includes the following fields:
       "hide": false
     },
     {
-      "label": "Product Name",
+      "title": "Product Name",
       "nick": "name",
       "kind": "text",
       "type": "string",
@@ -221,7 +221,7 @@ Each column in the `labels` array includes the following fields:
       "hide": false
     },
     {
-      "label": "Price",
+      "title": "Price",
       "nick": "price",
       "kind": "text",
       "type": "number",
@@ -229,7 +229,7 @@ Each column in the `labels` array includes the following fields:
       "hide": false
     },
     {
-      "label": "Stock",
+      "title": "Stock",
       "nick": "stock",
       "kind": "text",
       "type": "number",
@@ -294,7 +294,7 @@ Custom formatters can be used to display data in a more user-friendly way:
 ```json
 {
   "field": "status",
-  "label": "Status",
+  "title": "Status",
   "formatter": "statusFormatter"
 }
 ```
@@ -306,7 +306,7 @@ You can add action buttons to each row:
 ```json
 {
   "field": "action",
-  "label": "Action",
+  "title": "Action",
   "formatter": "actionFormatter"
 }
 ```
@@ -323,7 +323,7 @@ For complex data, you can implement nested tables:
   "dataset": {
     "uuid_dataset": "orders_dataset_123"
   },
-  "labels": [
+  "titles": [
     // Main table columns
   ],
   "expandable": {
@@ -331,7 +331,7 @@ For complex data, you can implement nested tables:
       "dataset": {
         "url_dataset": "https://api.example.com/order-items"
       },
-      "labels": [
+      "titles": [
         // Nested table columns
       ]
     }
