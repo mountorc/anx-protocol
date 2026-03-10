@@ -49,7 +49,7 @@ In ANX frontend interaction protocol, a form configuration typically includes th
       "nick": "username",
       "title": "Username",
       "defaultValue": "",
-      "must": true,
+      "required": true,
       "placeholder": "请输入用户名",
       "minLength": 3,
       "maxLength": 20,
@@ -61,7 +61,7 @@ In ANX frontend interaction protocol, a form configuration typically includes th
       "nick": "age",
       "title": "Age",
       "defaultValue": 18,
-      "must": true,
+      "required": true,
       "minLength": 1,
       "maxLength": 3,
       "description": "用户的年龄"
@@ -72,7 +72,7 @@ In ANX frontend interaction protocol, a form configuration typically includes th
       "nick": "gender",
       "title": "Gender",
       "defaultValue": "male",
-      "must": true,
+      "required": true,
       "description": "用户的性别"
     },
     {
@@ -81,7 +81,7 @@ In ANX frontend interaction protocol, a form configuration typically includes th
       "nick": "category",
       "title": "Category",
       "defaultValue": "",
-      "must": true,
+      "required": true,
       "description": "产品分类",
       "optionsSet": {
         "dataset": {

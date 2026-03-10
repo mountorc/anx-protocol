@@ -113,21 +113,21 @@
                           "type": "string",
                           "nick": "userName",
                           "title": "姓名",
-                          "must": true
+                          "required": true
                         },
                         {
                           "kind": "input",
                           "type": "string",
                           "nick": "userEmail",
                           "title": "邮箱",
-                          "must": true
+                          "required": true
                         },
                         {
                           "kind": "input",
                           "type": "string",
                           "nick": "userPhone",
                           "title": "电话",
-                          "must": true
+                          "required": true
                         }
                       ],
                       "triggerSet": {
