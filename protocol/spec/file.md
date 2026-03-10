@@ -42,7 +42,7 @@
   "label": "请上传头像",
   "accept": "image/*",
   "maxSize": 5242880,
-  "required": true,
+  "must": true,
   "description": "支持 JPG、PNG 格式，大小不超过 5MB"
 }
 ```

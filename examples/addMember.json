@@ -6,7 +6,7 @@
       "nick": "memberId",
       "title": "会员ID",
       "defaultValue": "",
-      "required": true,
+      "must": true,
       "placeholder": "请输入会员ID",
       "minLength": 5,
       "maxLength": 20,
@@ -18,7 +18,7 @@
       "nick": "name",
       "title": "姓名",
       "defaultValue": "",
-      "required": true,
+      "must": true,
       "placeholder": "请输入姓名",
       "minLength": 2,
       "maxLength": 20,
@@ -30,7 +30,7 @@
       "nick": "gender",
       "title": "性别",
       "defaultValue": "male",
-      "required": true,
+      "must": true,
       "description": "会员的性别"
     },
     {
@@ -39,7 +39,7 @@
       "nick": "age",
       "title": "年龄",
       "defaultValue": 18,
-      "required": true,
+      "must": true,
       "minLength": 1,
       "maxLength": 3,
       "description": "会员的年龄"
@@ -50,7 +50,7 @@
       "nick": "phone",
       "title": "手机号码",
       "defaultValue": "",
-      "required": true,
+      "must": true,
       "placeholder": "请输入手机号码",
       "minLength": 11,
       "maxLength": 11,
@@ -74,7 +74,7 @@
       "nick": "memberLevel",
       "title": "会员等级",
       "defaultValue": "bronze",
-      "required": true,
+      "must": true,
       "description": "会员的等级"
     },
     {
@@ -83,7 +83,7 @@
       "nick": "registrationDate",
       "title": "注册日期",
       "defaultValue": "",
-      "required": true,
+      "must": true,
       "description": "会员的注册日期"
     },
     {
@@ -101,7 +101,7 @@
       "nick": "status",
       "title": "状态",
       "defaultValue": "active",
-      "required": true,
+      "must": true,
       "description": "会员的状态"
     },
     {

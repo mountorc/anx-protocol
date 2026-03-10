@@ -40,7 +40,7 @@
   "label": "请录制语音消息",
   "maxDuration": 60,
   "format": "audio/mp3",
-  "required": true,
+  "must": true,
   "description": "最长录制 60 秒"
 }
 ```

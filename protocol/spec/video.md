@@ -47,7 +47,7 @@
   "accept": "video/mp4",
   "maxSize": 52428800,
   "maxDuration": 300,
-  "required": true,
+  "must": true,
   "description": "支持 MP4 格式，大小不超过 50MB，时长不超过 5 分钟"
 }
 ```
