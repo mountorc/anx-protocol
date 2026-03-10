@@ -40,6 +40,38 @@ In ANX protocol, `map` refers to a mapping between field names, not between fiel
 2. **Clarity**: Map keys always represent table field names, while values represent source field names
 3. **Flexibility**: Maps can contain multiple field mappings as needed
 
+### Common Field Definitions
+
+#### must
+
+`must` is a boolean field that indicates whether a field is required. When set to `true`, the field must be provided and cannot be empty.
+
+```json
+{
+  "must": true
+}
+```
+
+#### title
+
+`title` is a string field that represents the display name of a field, shown to users in the interface.
+
+```json
+{
+  "title": "User Name"
+}
+```
+
+#### nick
+
+`nick` is a string field that represents the field name used for data binding and submission. It should be unique within the context of the component.
+
+```json
+{
+  "nick": "userName"
+}
+```
+
 ## Protocol Components
 
 The ANX protocol consists of several key components:
