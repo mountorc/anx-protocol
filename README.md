@@ -57,16 +57,16 @@ ANX protocol can be used in various scenarios:
 3. **Skill SOP Declaration**: As a standard operating procedure (SOP) declaration for skills, providing a structured way to define skill behaviors
 4. **Markdown Embedding**: As interactive modules embedded in markdown files, using the following formats:
 
-   - **Interactive Module**: Use ```anx:render for embedding and running ANX as an interactive module:
+   - **Interactive Module**: Use :::anx for embedding and running ANX as an interactive module:
 
-     ```anx:render
+     :::anx
      {
        "kind":"input",
        "updateData":{
          "tableName":...
        }
      }
-     ```
+     :::
 
    - **Code Display**: Use ```anx for pure ANX code display:
 
@@ -128,16 +128,16 @@ ANX 协议可以用于多种场景：
 3. **Skill SOP 声明**：作为技能的标准操作流程（SOP）声明，提供结构化的方式来定义技能行为
 4. **Markdown 嵌入**：作为嵌入到markdown中的交互模块，使用如下格式：
 
-   - **交互模块**：使用 ```anx:render 格式嵌入并运行 ANX 作为交互模块：
+   - **交互模块**：使用 :::anx 格式嵌入并运行 ANX 作为交互模块：
 
-     ```anx:render
+     :::anx
      {
        "kind":"input",
        "updateData":{
          "tableName":...
        }
      }
-     ```
+     :::
 
    - **代码展示**：使用 ```anx 格式用于纯 ANX 代码展示：
 
