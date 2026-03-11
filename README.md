@@ -55,11 +55,11 @@ ANX protocol can be used in various scenarios:
 1. **Low-code Engine**: As a page visualization display format and low-code engine language, enabling rapid development and deployment of frontend interfaces
 2. **Agent Skill**: As a skill for AI to understand application content, allowing Agents to interact with frontend elements intelligently
 3. **Skill SOP Declaration**: As a standard operating procedure (SOP) declaration for skills, providing a structured way to define skill behaviors
-4. **Markdown Embedding**: As interactive modules embedded in markdown files, supporting the following formats:
+4. **Markdown Embedding**: As interactive modules embedded in markdown files, using the following formats:
 
-   - **Code Display**: Use ```anx for pure ANX code display:
+   - **Interactive Module**: Use ```anx:render for embedding and running ANX as an interactive module:
 
-     ```anx
+     ```anx:render
      {
        "kind":"input",
        "updateData":{
@@ -68,9 +68,9 @@ ANX protocol can be used in various scenarios:
      }
      ```
 
-   - **Interactive Module**: Use ```anx:render for rendering and running ANX as an interactive module:
+   - **Code Display**: Use ```anx for pure ANX code display:
 
-     ```anx:render
+     ```anx
      {
        "kind":"input",
        "updateData":{
@@ -126,11 +126,11 @@ ANX 协议可以用于多种场景：
 1. **低代码引擎**：作为页面可视化展示格式和低代码引擎语言，实现前端界面的快速开发和部署
 2. **Agent Skill**：作为AI理解应用内容的技能，使Agent能够智能地与前端元素交互
 3. **Skill SOP 声明**：作为技能的标准操作流程（SOP）声明，提供结构化的方式来定义技能行为
-4. **Markdown 嵌入**：作为嵌入到markdown中的交互模块，支持如下格式：
+4. **Markdown 嵌入**：作为嵌入到markdown中的交互模块，使用如下格式：
 
-   - **代码展示**：使用 ```anx 用于纯 ANX 代码展示：
+   - **交互模块**：使用 ```anx:render 格式嵌入并运行 ANX 作为交互模块：
 
-     ```anx
+     ```anx:render
      {
        "kind":"input",
        "updateData":{
@@ -139,9 +139,9 @@ ANX 协议可以用于多种场景：
      }
      ```
 
-   - **交互模块**：使用 ```anx:render 用于渲染运行 ANX 作为可交互模块：
+   - **代码展示**：使用 ```anx 格式用于纯 ANX 代码展示：
 
-     ```anx:render
+     ```anx
      {
        "kind":"input",
        "updateData":{
