@@ -55,16 +55,29 @@ ANX protocol can be used in various scenarios:
 1. **Low-code Engine**: As a page visualization display format and low-code engine language, enabling rapid development and deployment of frontend interfaces
 2. **Agent Skill**: As a skill for AI to understand application content, allowing Agents to interact with frontend elements intelligently
 3. **Skill SOP Declaration**: As a standard operating procedure (SOP) declaration for skills, providing a structured way to define skill behaviors
-4. **Markdown Embedding**: As interactive modules embedded in markdown files, supporting the following format:
+4. **Markdown Embedding**: As interactive modules embedded in markdown files, supporting the following formats:
 
-   ```anx
-   {
-     "kind":"input",
-     "updateData":{
-       "tableName":...
+   - **Code Display**: Use ```anx for pure ANX code display:
+
+     ```anx
+     {
+       "kind":"input",
+       "updateData":{
+         "tableName":...
+       }
      }
-   }
-   ```
+     ```
+
+   - **Interactive Module**: Use ```anx:render for rendering and running ANX as an interactive module:
+
+     ```anx:render
+     {
+       "kind":"input",
+       "updateData":{
+         "tableName":...
+       }
+     }
+     ```
 
 ## 协议文件
 
