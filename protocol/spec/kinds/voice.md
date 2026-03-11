@@ -11,7 +11,7 @@
   "kind": "voice",
   "maxDuration": 60,
   "format": "audio/mp3",
-  "required": false,
+  "must": false,
   "value": "音频文件路径",
   "controls": true
 }
@@ -70,7 +70,7 @@
   "label": "语音反馈（可选）",
   "maxDuration": 30,
   "format": "audio/mp3",
-  "required": false,
+  "must": false,
   "description": "您可以录制语音反馈，最长 30 秒"
 }
 ```

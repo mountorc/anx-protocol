@@ -12,7 +12,7 @@
   "multiple": false,
   "accept": "文件类型",
   "maxSize": 10485760,
-  "required": false,
+  "must": false,
   "value": "文件路径",
   "preview": true
 }

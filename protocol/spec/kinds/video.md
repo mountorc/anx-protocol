@@ -13,7 +13,7 @@
   "accept": "video/*",
   "maxSize": 104857600,
   "maxDuration": 600,
-  "required": false,
+  "must": false,
   "value": "视频文件路径",
   "controls": true,
   "preview": true
