@@ -32,8 +32,8 @@
 ### 10. spec/kinds/dataset.md
 - **Description**: Dataset configuration guidelines, defining how to use uuid_dataset to fetch data from datasets.
 
-### 11. spec/utils/text.md
-- **Description**: Text processing guidelines, defining variable and formula substitution in text content.
+### 11. spec/utils/content.md
+- **Description**: Content processing guidelines, defining variable and formula substitution in text content.
 
 ### 12. spec/kinds/html.md
 - **Description**: HTML component guidelines, defining how to display HTML content in the interface.
@@ -71,7 +71,10 @@
 ### 23. spec/kinds/board.md
 - **Description**: Board component guidelines, defining how to create and manage boards in the interface.
 
-### 24. spec/kinds/list.md
+### 24. spec/kinds/box.md
+- **Description**: Box component guidelines, defining a container component with title and HTML content support.
+
+### 25. spec/kinds/list.md
 - **Description**: List component guidelines, defining how to display and manage lists in the interface.
 
 ### 25. implement/api-types.md

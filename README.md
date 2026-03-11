@@ -48,6 +48,24 @@ ANX (AI Native Ex) Frontend Interaction Protocol is a unified frontend coding st
    - Supports modular configuration structure
    - Provides detailed configuration examples
 
+## Usage Scenarios
+
+ANX protocol can be used in various scenarios:
+
+1. **Low-code Engine**: As a page visualization display format and low-code engine language, enabling rapid development and deployment of frontend interfaces
+2. **Agent Skill**: As a skill for AI to understand application content, allowing Agents to interact with frontend elements intelligently
+3. **Skill SOP Declaration**: As a standard operating procedure (SOP) declaration for skills, providing a structured way to define skill behaviors
+4. **Markdown Embedding**: As interactive modules embedded in markdown files, supporting the following format:
+
+   ```anx
+   {
+     "kind":"input",
+     "updateData":{
+       "tableName":...
+     }
+   }
+   ```
+
 ## 协议文件
 
 ### protocol 文件夹
@@ -87,3 +105,21 @@ ANX (AI Native Ex) 前端交互协议是一套专为 Agent 设计的统一前端
    - 使用JSON格式进行配置
    - 支持模块化的配置结构
    - 提供详细的配置示例
+
+## 使用场景
+
+ANX 协议可以用于多种场景：
+
+1. **低代码引擎**：作为页面可视化展示格式和低代码引擎语言，实现前端界面的快速开发和部署
+2. **Agent Skill**：作为AI理解应用内容的技能，使Agent能够智能地与前端元素交互
+3. **Skill SOP 声明**：作为技能的标准操作流程（SOP）声明，提供结构化的方式来定义技能行为
+4. **Markdown 嵌入**：作为嵌入到markdown中的交互模块，支持如下格式：
+
+   ```anx
+   {
+     "kind":"input",
+     "updateData":{
+       "tableName":...
+     }
+   }
+   ```

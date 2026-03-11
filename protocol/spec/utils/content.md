@@ -1,12 +1,12 @@
-# Text Processing Guide
+# Content Processing Guide
 
 ## Overview
 
-This guide describes how text content is processed in ANX frontend interaction protocol, focusing on variable and formula substitution in text.
+This guide describes how content is processed in ANX frontend interaction protocol, focusing on variable and formula substitution in content.
 
 ## Variable/Formula Substitution
 
-ANX supports two syntaxes for variable and formula substitution in text content:
+ANX supports two syntaxes for variable and formula substitution in content:
 
 1. **Double curly braces syntax**: `{{formula}}`
 2. **Dollar sign syntax**: `${formula}`
