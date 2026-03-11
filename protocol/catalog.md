@@ -32,8 +32,8 @@
 ### 10. spec/kinds/dataset.md
 - **Description**: Dataset configuration guidelines, defining how to use uuid_dataset to fetch data from datasets.
 
-### 11. spec/utils/content.md
-- **Description**: Content processing guidelines, defining variable and formula substitution in text content.
+### 11. spec/utils/template.md
+- **Description**: Template processing guidelines, defining variable and formula substitution in content.
 
 ### 12. spec/kinds/html.md
 - **Description**: HTML component guidelines, defining how to display HTML content in the interface.

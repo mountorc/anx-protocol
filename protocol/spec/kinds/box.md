@@ -9,6 +9,7 @@ The `box` kind is a container component in ANX frontend interaction protocol tha
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | `dataset` | Object | No | Data source configuration, used to fetch data for the box |
+| `data` | Array | No | Direct data array to use for the box, containing the list of items to process |
 | `title` | String | No | Title text to display at the top of the box |
 | `html` | String | No | HTML content following the content processing rules |
 | `template` | String | No | Template content following the content processing rules (alternative to `html` field) |
@@ -32,13 +33,25 @@ Both the `html` and `template` fields follow the same content processing rules a
 }
 ```
 
-## With Dataset
+## With Data Source
+
+The box component supports two ways to provide data:
+
+### Using dataset
 
 When using the `dataset` parameter, the box component will:
 1. Fetch data from the specified dataset
 2. Use either the `html` or `template` field as a template (if both are provided, `template` takes precedence)
 3. Assign variables from the dataset to the template
 4. Render the template for each item in the dataset, creating a list
+
+### Using direct data array
+
+When using the `data` parameter, the box component will:
+1. Use the directly provided data array
+2. Use either the `html` or `template` field as a template (if both are provided, `template` takes precedence)
+3. Assign variables from each item in the data array to the template
+4. Render the template for each item in the data array, creating a list
 
 ```json
 {
@@ -51,7 +64,9 @@ When using the `dataset` parameter, the box component will:
 }
 ```
 
-### Dataset as List
+### Data as List
+
+#### Using dataset
 
 When the dataset returns multiple items, the box will render the html or template for each item:
 
@@ -66,7 +81,24 @@ When the dataset returns multiple items, the box will render the html or templat
 }
 ```
 
-This will generate a list of product items, each rendered using the html template with the corresponding product data.
+#### Using direct data array
+
+When using a direct data array, the box will render the html or template for each item in the array:
+
+```json
+{
+  "kind": "box",
+  "title": "Product List",
+  "data": [
+    { "name": "Product 1", "price": 100 },
+    { "name": "Product 2", "price": 200 },
+    { "name": "Product 3", "price": 300 }
+  ],
+  "html": "<div class='product'><h2>{{name}}</h2><p class='price'>${{price}}</p></div>"
+}
+```
+
+Both examples will generate a list of product items, each rendered using the html or template with the corresponding product data.
 
 ## Dynamic Content
 
@@ -82,7 +114,7 @@ Both the `html` and `template` fields can contain dynamic content using formula 
 
 ## Example
 
-### Using html field
+### Using html field with dataset
 
 ```json
 {
@@ -95,7 +127,7 @@ Both the `html` and `template` fields can contain dynamic content using formula 
 }
 ```
 
-### Using template field
+### Using template field with dataset
 
 ```json
 {
@@ -108,10 +140,26 @@ Both the `html` and `template` fields can contain dynamic content using formula 
 }
 ```
 
+### Using direct data array
+
+```json
+{
+  "kind": "box",
+  "title": "Product List",
+  "data": [
+    { "name": "Product 1", "price": 100, "description": "Description for Product 1" },
+    { "name": "Product 2", "price": 200, "description": "Description for Product 2" },
+    { "name": "Product 3", "price": 300, "description": "Description for Product 3" }
+  ],
+  "template": "<div class='product'><h2>{{name}}</h2><p class='price'>${{price}}</p><p class='desc'>{{description}}</p></div>"
+}
+```
+
 ## Best Practices
 
 - Use the `title` parameter to provide a clear header for the box content
 - Use the `dataset` parameter when the content needs to be fetched from a data source
+- Use the `data` parameter when you want to provide data directly without fetching from a dataset
 - Use either `html` or `template` field for content (not both)
 - Follow the content processing rules for dynamic content in both `html` and `template` fields
 - Keep the HTML structure simple and semantic for better accessibility
