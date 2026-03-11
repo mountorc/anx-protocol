@@ -80,11 +80,13 @@ Each component in the `kinds` array follows the standard ANX component structure
       "kind": "table",
       "nick": "recent_activities",
       "title": "Recent Activities",
-      "dataSource": "/api/data/activities",
-      "columns": [
-        { "field": "id", "title": "ID" },
-        { "field": "name", "title": "Name" },
-        { "field": "date", "title": "Date" }
+      "dataset": {
+        "url_dataset": "/api/data/activities"
+      },
+      "titles": [
+        { "title": "ID", "nick": "id", "kind": "text", "type": "number" },
+        { "title": "Name", "nick": "name", "kind": "text", "type": "string" },
+        { "title": "Date", "nick": "date", "kind": "text", "type": "datetime" }
       ]
     }
   ]
