@@ -19,7 +19,9 @@ To use a dataset as the data source for a table, you can use either `uuid_datase
   "kind": "table",
   "nick": "users_table",
   "title": "Users",
-  "uuid_dataset": "数据集UUID",
+  "dataset": {
+    "uuid_dataset": "数据集UUID"
+  },
   "titles": [
     {
       "title": "ID",
@@ -44,7 +46,9 @@ To use a dataset as the data source for a table, you can use either `uuid_datase
   "kind": "table",
   "nick": "users_table",
   "title": "Users",
-  "url_dataset": "https://api.example.com/users",
+  "dataset": {
+    "url_dataset": "https://api.example.com/users"
+  },
   "titles": [
     {
       "title": "ID",
@@ -66,10 +70,11 @@ To use a dataset as the data source for a table, you can use either `uuid_datase
 
 | Field | Description | Required |
 |-------|-------------|----------|
-| `uuid_dataset` | UUID of the dataset to fetch data from | No |
-| `url_dataset` | URL to fetch data from (alternative to uuid_dataset) | No |
+| `dataset` | Dataset configuration object | No |
+| `dataset.uuid_dataset` | UUID of the dataset to fetch data from | No |
+| `dataset.url_dataset` | URL to fetch data from (alternative to uuid_dataset) | No |
 
-> Note: You can use either `uuid_dataset` or `url_dataset`, but not both. If both are provided, `uuid_dataset` takes precedence.
+> Note: You can use either `dataset.uuid_dataset` or `dataset.url_dataset`, but not both. If both are provided, `dataset.uuid_dataset` takes precedence.
 
 ## Example Table Configuration with Dataset
 
@@ -78,7 +83,9 @@ To use a dataset as the data source for a table, you can use either `uuid_datase
   "kind": "table",
   "nick": "products_table",
   "title": "Products",
-  "uuid_dataset": "product_dataset_123",
+  "dataset": {
+    "uuid_dataset": "product_dataset_123"
+  },
   "titles": [
     {
       "title": "Product ID",
@@ -152,8 +159,8 @@ To fetch data from a dataset, you can use the following API endpoint:
 
 - Use descriptive UUIDs for datasets
 - Ensure datasets are properly configured with the correct structure
-- Use `uuid_dataset` for static or pre-configured data
-- Use `dataSource` for dynamic data that needs to be fetched from an API
+- Use `dataset.uuid_dataset` for static or pre-configured data
+- Use `dataset.url_dataset` for dynamic data that needs to be fetched from an API
 - Implement proper error handling for dataset retrieval
 - Consider caching dataset data for better performance
 

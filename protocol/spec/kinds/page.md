@@ -113,6 +113,6 @@ Each component in the `kinds` array follows the standard ANX component structure
 ## Data Flow
 
 - Page configuration defines the structure
-- Dynamic data is loaded based on `dataSource` properties
+- Dynamic data is loaded based on `dataset` properties
 - Formulas are evaluated to calculate derived values
 - User interactions trigger actions and data updates
