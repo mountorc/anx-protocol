@@ -128,11 +128,24 @@ ANX 协议可以用于多种场景：
 3. **Skill SOP 声明**：作为技能的标准操作流程（SOP）声明，提供结构化的方式来定义技能行为
 4. **Markdown 嵌入**：作为嵌入到markdown中的交互模块，支持如下格式：
 
-   ```anx
-   {
-     "kind":"input",
-     "updateData":{
-       "tableName":...
+   - **代码展示**：使用 ```anx 用于纯 ANX 代码展示：
+
+     ```anx
+     {
+       "kind":"input",
+       "updateData":{
+         "tableName":...
+       }
      }
-   }
-   ```
+     ```
+
+   - **交互模块**：使用 ```anx:render 用于渲染运行 ANX 作为可交互模块：
+
+     ```anx:render
+     {
+       "kind":"input",
+       "updateData":{
+         "tableName":...
+       }
+     }
+     ```
