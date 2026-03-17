@@ -105,19 +105,22 @@ class ANXFrontendProtocolSkill {
       version: '1.0.0',
       description: 'AI Native Ex frontend interaction protocol guidelines',
       components: {
-        item: ['input', 'textarea', 'options', 'checkbox', 'button', 'text'],
-        card: ['table', 'box', 'form', 'json', 'list']
+        item: ['input', 'textarea', 'options', 'checkbox', 'button', 'text', 'image', 'images', 'file', 'video', 'voice', 'json', 'list', 'time', 'date', 'month', 'year', 'datetime', 'color', 'province', 'city', 'markdown', 'html'],
+        card: ['table', 'box', 'form', 'chart']
       },
       formStructure: {
         kinds: 'Array of form items',
-        itemFields: ['kind', 'type', 'nick', 'title', 'formula', 'defaultValue']
+        itemFields: ['kind', 'type', 'nick', 'title', 'formula', 'defaultValue', 'must']
       },
       formulaSyntax: {
         variables: 'No special symbols needed',
         constants: 'Wrap in single quotes',
         operators: ['+', '-', '*', '/'],
-        parentheses: 'Supported for grouping'
-      }
+        parentheses: 'Supported for grouping',
+        conditional: 'case when then else end syntax (SQL-like)'
+      },
+      chartTypes: ['pie', 'line', 'bar', 'scatter', 'radar', 'doughnut', 'polarArea', 'bubble', 'area'],
+      datasetTypes: ['direct', 'uuid_dataset', 'url_dataset']
     };
 
     return guidelines;
