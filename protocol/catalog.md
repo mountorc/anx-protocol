@@ -2,6 +2,9 @@
 
 ## Document Index
 
+### 0. forms.md
+- **Description**: ANX Protocol 4 Standard Forms - Introduces the four standard forms of ANX protocol (CLI, Config, Markdown Block, Card Node) and their use cases.
+
 ### 1. spec/main.md
 - **Description**: Main document for ANX frontend interaction protocol, providing an overview and general guidelines.
 
