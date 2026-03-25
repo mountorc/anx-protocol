@@ -41,47 +41,50 @@
 ### 13. spec/utils/style.md
 - **Description**: Style configuration guidelines, defining JSON and text format for CSS styles.
 
-### 14. spec/utils/trigger-and-tap.md
+### 14. runtime/cli.md
+- **Description**: ANX CLI command guide, defining command format and command set for ANX frontend interaction protocol.
+
+### 15. spec/utils/trigger-and-tap.md
 - **Description**: Trigger and tap configuration guidelines, defining event-driven actions for UI elements.
 
-### 15. spec/utils/updateData.md
+### 16. spec/utils/updateData.md
 - **Description**: UpdateData configuration guidelines, defining how to update or insert data based on unique identifiers.
 
-### 16. spec/utils/editState.md
+### 17. spec/utils/editState.md
 - **Description**: Edit state configuration guidelines, defining how to manage editing states in the interface.
 
-### 17. spec/kinds/file.md
+### 18. spec/kinds/file.md
 - **Description**: File component guidelines, defining how to handle file uploads and downloads.
 
-### 18. spec/kinds/json.md
+### 19. spec/kinds/json.md
 - **Description**: JSON configuration guidelines, defining how to use JSON format in the protocol.
 
-### 19. spec/kinds/markdown.md
+### 20. spec/kinds/markdown.md
 - **Description**: Markdown component guidelines, defining how to display Markdown content in the interface.
 
-### 20. spec/kinds/options.md
+### 21. spec/kinds/options.md
 - **Description**: Options configuration guidelines, defining how to handle option lists and selections.
 
-### 21. spec/kinds/video.md
+### 22. spec/kinds/video.md
 - **Description**: Video component guidelines, defining how to display video content in the interface.
 
-### 22. spec/kinds/voice.md
+### 23. spec/kinds/voice.md
 - **Description**: Voice component guidelines, defining how to handle voice input and output.
 
-### 23. spec/kinds/board.md
+### 24. spec/kinds/board.md
 - **Description**: Board component guidelines, defining how to create and manage boards in the interface.
 
-### 24. spec/kinds/box.md
+### 25. spec/kinds/box.md
 - **Description**: Box component guidelines, defining a container component with title and HTML content support.
 
-### 25. spec/kinds/list.md
+### 26. spec/kinds/list.md
 - **Description**: List component guidelines, defining how to display and manage lists in the interface.
 
-### 26. implement/api-types.md
+### 27. impl/api-types.md
 - **Description**: API types and usage patterns in ANX protocol, including configuration-based and full-information APIs.
 
-### 27. implement/api-build-anx-config.md
+### 28. impl/api-build-anx-config.md
 - **Description**: Guidelines for building configuration-based API for ANX protocol.
 
-### 28. implement/api-build-anx-page.md
+### 29. impl/api-build-anx-page.md
 - **Description**: Guidelines for building full-information API for ANX protocol.
