@@ -38,6 +38,57 @@ In ANX frontend interaction protocol, a form configuration typically includes th
 | `options` | Array of options for select fields |
 | `optionsSet` | Configuration for loading options from a dataset |
 
+## Formula Calculation and Linkage
+
+### Formula Linkage Mechanism
+
+When an item defines a `formula` field, the following mechanism applies:
+
+1. **Automatic Triggering**: Whenever any field in the form is updated, the system automatically re-evaluates all formulas that depend on the updated field.
+
+2. **Value Assignment**: The calculated result of the formula is automatically assigned to the `value` property of the item.
+
+3. **Dependency Tracking**: The system tracks dependencies between fields to ensure formulas are only re-evaluated when necessary.
+
+### Example
+
+```json
+{
+  "kinds": [
+    {
+      "kind": "input",
+      "type": "number",
+      "nick": "price",
+      "title": "Price",
+      "defaultValue": 100
+    },
+    {
+      "kind": "input",
+      "type": "number",
+      "nick": "quantity",
+      "title": "Quantity",
+      "defaultValue": 2
+    },
+    {
+      "kind": "text",
+      "type": "number",
+      "nick": "total",
+      "title": "Total",
+      "formula": "price * quantity"
+    }
+  ]
+}
+```
+
+In this example:
+- When the `price` or `quantity` field is updated, the `total` field's formula is automatically recalculated
+- The result of `price * quantity` is assigned to `total.value`
+- The user sees the updated total value immediately
+
+### Formula Syntax
+
+For detailed information about formula syntax and usage, please refer to the [Formula Guide](formula.md).
+
 ## Example
 
 ```json
