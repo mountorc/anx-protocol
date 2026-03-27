@@ -11,22 +11,21 @@ The list component is used to display a series of related data items, supporting
   "kind": "list",
   "nick": "list_name",
   "title": "List Title",
-  "autoList": {
-    "itemList": [
-      {
-        "nick": "field_name",
-        "title": "Field Title",
-        "kind": "input",
-        "type": "string",
-        "lineEdit": "2",
-        "defaultValue": ""
-      }
-    ],
-    "addButton": {
-      "iitemPre": -1
-    },
-    "moveButton": true
-  }
+  "itemList": [
+    {
+      "nick": "field_name",
+      "title": "Field Title",
+      "kind": "input",
+      "type": "string",
+      "lineEdit": "2",
+      "defaultValue": ""
+    }
+  ],
+  "addButton": {
+    "iitemPre": -1
+  },
+  "moveButton": true,
+  "autoDataKey": "data_source_key"
 }
 ```
 
@@ -39,12 +38,6 @@ The list component is used to display a series of related data items, supporting
 | kind | string | Yes | Component type, fixed as "list" |
 | nick | string | Yes | Unique identifier for the list |
 | title | string | Yes | List title displayed to users |
-| autoList | object | Yes | List configuration object |
-
-### autoList Configuration
-
-| Field Name | Type | Required | Description |
-|------------|------|----------|-------------|
 | itemList | array | Yes | List of fields, defining the structure of each column |
 | addButton | object | No | Add button configuration |
 | moveButton | boolean | No | Whether to show move up/down buttons, default is false |
@@ -113,28 +106,26 @@ When `autoMerge` is true, adjacent cells with the same value in that column are 
   "kind": "list",
   "nick": "userList",
   "title": "User List",
-  "autoList": {
-    "itemList": [
-      {
-        "nick": "username",
-        "title": "Username",
-        "kind": "input",
-        "type": "string",
-        "lineEdit": "2",
-        "defaultValue": ""
-      },
-      {
-        "nick": "age",
-        "title": "Age",
-        "kind": "input",
-        "type": "number",
-        "lineEdit": "2",
-        "defaultValue": 0
-      }
-    ],
-    "addButton": {
-      "iitemPre": -1
+  "itemList": [
+    {
+      "nick": "username",
+      "title": "Username",
+      "kind": "input",
+      "type": "string",
+      "lineEdit": "2",
+      "defaultValue": ""
+    },
+    {
+      "nick": "age",
+      "title": "Age",
+      "kind": "input",
+      "type": "number",
+      "lineEdit": "2",
+      "defaultValue": 0
     }
+  ],
+  "addButton": {
+    "iitemPre": -1
   }
 }
 ```
@@ -146,43 +137,41 @@ When `autoMerge` is true, adjacent cells with the same value in that column are 
   "kind": "list",
   "nick": "productList",
   "title": "Product List",
-  "autoList": {
-    "itemList": [
-      {
-        "nick": "productName",
-        "title": "Product Name",
-        "kind": "input",
-        "type": "string",
-        "lineEdit": "2"
-      },
-      {
-        "nick": "category",
-        "title": "Category",
-        "kind": "options",
-        "type": "string",
-        "lineEdit": "2",
-        "optionsItem": [
-          { "value": "electronics", "title": "Electronics" },
-          { "value": "clothing", "title": "Clothing" }
-        ]
-      },
-      {
-        "nick": "status",
-        "title": "Status",
-        "kind": "options",
-        "type": "string",
-        "lineEdit": "2",
-        "optionsItem": [
-          { "value": "active", "title": "Active" },
-          { "value": "inactive", "title": "Inactive" }
-        ]
-      }
-    ],
-    "addButton": {
-      "iitemPre": 0
+  "itemList": [
+    {
+      "nick": "productName",
+      "title": "Product Name",
+      "kind": "input",
+      "type": "string",
+      "lineEdit": "2"
     },
-    "moveButton": true
-  }
+    {
+      "nick": "category",
+      "title": "Category",
+      "kind": "options",
+      "type": "string",
+      "lineEdit": "2",
+      "optionsItem": [
+        { "value": "electronics", "title": "Electronics" },
+        { "value": "clothing", "title": "Clothing" }
+      ]
+    },
+    {
+      "nick": "status",
+      "title": "Status",
+      "kind": "options",
+      "type": "string",
+      "lineEdit": "2",
+      "optionsItem": [
+        { "value": "active", "title": "Active" },
+        { "value": "inactive", "title": "Inactive" }
+      ]
+    }
+  ],
+  "addButton": {
+    "iitemPre": 0
+  },
+  "moveButton": true
 }
 ```
 
@@ -193,41 +182,39 @@ When `autoMerge` is true, adjacent cells with the same value in that column are 
   "kind": "list",
   "nick": "orderList",
   "title": "Order List",
-  "autoList": {
-    "itemList": [
-      {
-        "nick": "productId",
-        "title": "Product",
-        "kind": "options",
-        "type": "string",
-        "lineEdit": "2",
-        "optionsItem": [
-          { "value": "P001", "title": "Product A", "data": { "price": 100, "stock": 50 } },
-          { "value": "P002", "title": "Product B", "data": { "price": 200, "stock": 30 } }
-        ],
-        "nickSet": {
-          "price": "price",
-          "stock": "stock"
-        }
-      },
-      {
-        "nick": "price",
-        "title": "Price",
-        "kind": "text",
-        "type": "number",
-        "lineEdit": "1"
-      },
-      {
-        "nick": "stock",
-        "title": "Stock",
-        "kind": "text",
-        "type": "number",
-        "lineEdit": "1"
+  "itemList": [
+    {
+      "nick": "productId",
+      "title": "Product",
+      "kind": "options",
+      "type": "string",
+      "lineEdit": "2",
+      "optionsItem": [
+        { "value": "P001", "title": "Product A", "data": { "price": 100, "stock": 50 } },
+        { "value": "P002", "title": "Product B", "data": { "price": 200, "stock": 30 } }
+      ],
+      "nickSet": {
+        "price": "price",
+        "stock": "stock"
       }
-    ],
-    "addButton": {
-      "iitemPre": 0
+    },
+    {
+      "nick": "price",
+      "title": "Price",
+      "kind": "text",
+      "type": "number",
+      "lineEdit": "1"
+    },
+    {
+      "nick": "stock",
+      "title": "Stock",
+      "kind": "text",
+      "type": "number",
+      "lineEdit": "1"
     }
+  ],
+  "addButton": {
+    "iitemPre": 0
   }
 }
 ```
@@ -239,34 +226,32 @@ When `autoMerge` is true, adjacent cells with the same value in that column are 
   "kind": "list",
   "nick": "categoryList",
   "title": "Category Statistics",
-  "autoList": {
-    "itemList": [
-      {
-        "nick": "category",
-        "title": "Category",
-        "kind": "text",
-        "type": "string",
-        "lineEdit": "1",
-        "autoMerge": true
-      },
-      {
-        "nick": "productName",
-        "title": "Product Name",
-        "kind": "text",
-        "type": "string",
-        "lineEdit": "1"
-      },
-      {
-        "nick": "sales",
-        "title": "Sales",
-        "kind": "text",
-        "type": "number",
-        "lineEdit": "1"
-      }
-    ],
-    "addButton": {
-      "iitemPre": -1
+  "itemList": [
+    {
+      "nick": "category",
+      "title": "Category",
+      "kind": "text",
+      "type": "string",
+      "lineEdit": "1",
+      "autoMerge": true
+    },
+    {
+      "nick": "productName",
+      "title": "Product Name",
+      "kind": "text",
+      "type": "string",
+      "lineEdit": "1"
+    },
+    {
+      "nick": "sales",
+      "title": "Sales",
+      "kind": "text",
+      "type": "number",
+      "lineEdit": "1"
     }
+  ],
+  "addButton": {
+    "iitemPre": -1
   }
 }
 ```
@@ -278,25 +263,23 @@ When `autoMerge` is true, adjacent cells with the same value in that column are 
   "kind": "list",
   "nick": "dataList",
   "title": "Data List",
-  "autoList": {
-    "autoDataKey": "user_data_key",
-    "itemList": [
-      {
-        "nick": "name",
-        "title": "Name",
-        "kind": "text",
-        "type": "string",
-        "lineEdit": "1"
-      },
-      {
-        "nick": "email",
-        "title": "Email",
-        "kind": "text",
-        "type": "string",
-        "lineEdit": "1"
-      }
-    ]
-  }
+  "autoDataKey": "user_data_key",
+  "itemList": [
+    {
+      "nick": "name",
+      "title": "Name",
+      "kind": "text",
+      "type": "string",
+      "lineEdit": "1"
+    },
+    {
+      "nick": "email",
+      "title": "Email",
+      "kind": "text",
+      "type": "string",
+      "lineEdit": "1"
+    }
+  ]
 }
 ```
 
