@@ -1,8 +1,8 @@
-# How to Operate ANX Applications
+# How to Operate ANX Card Nodes
 
 ## Overview
 
-This guide provides instructions on how to operate ANX applications using the ANX Card Node format (`<x kind cardKey>`) and ANX CLI commands.
+This guide provides detailed instructions on how to operate ANX Card Nodes using the ANX Card Node format (`<x kind cardKey>`) and ANX CLI commands.
 
 ## Card Node Format
 

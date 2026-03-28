@@ -8,7 +8,7 @@ All usage documentation is located in the `usage` directory. Here you can find d
 
 ### Available Documentation
 
-- **[How to Use ANX](usage/how-to-use-anx.md)**: Guide for using ANX Card Node format (`<x kind cardKey>`) and CLI commands to operate ANX applications
+- **[How to Operate ANX Card Nodes](usage/how-to-use-anx.md)**: Guide for using ANX Card Node format (`<x kind cardKey>`) and CLI commands to operate ANX Card Nodes
 
 ### How to Use
 
