@@ -1,1 +1,0 @@
-每一个protocol文件夹中的md文档都要在catalog.md中列出，作为索引
