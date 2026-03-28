@@ -32,7 +32,7 @@ Common component types include:
 | checkbox | Multiple selection |
 | textarea | Multi-line text input |
 | button | Action button |
-| text | Read-only text display |
+| text | Non-editable text label |
 | list | Table/list display |
 
 ## CLI Commands
