@@ -91,3 +91,9 @@
 
 ### 29. impl/api-build-anx-page.md
 - **Description**: Guidelines for building full-information API for ANX protocol.
+
+### 30. spec/kinds/sop.md
+- **Description**: SOP (Standard Operating Procedure) component guidelines, defining structured workflows with control flow mechanisms including sources and targets.
+
+### 31. markup/markup.md
+- **Description**: ANX markup format documentation, defining the XML-like syntax for card nodes with properties and actions.

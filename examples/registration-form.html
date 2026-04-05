@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Seeker Registration</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        .container {
+            background-color: #fff;
+            border: 1px solid #000;
+            padding: 25px;
+            width: 100%;
+            max-width: 450px;
+        }
+        
+        h1 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 4px;
+            color: #000;
+            letter-spacing: 0.05em;
+        }
+        
+        .subtitle {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 16px;
+            letter-spacing: 0.05em;
+        }
+        
+        .form-group {
+            margin-bottom: 12px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 4px;
+            font-size: 12px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        input[type="number"],
+        textarea,
+        select {
+            width: 100%;
+            height: 36px;
+            padding: 8px 10px;
+            border: 1px solid #000;
+            font-size: 14px;
+            background: #fff;
+            border-radius: 0;
+            outline: none;
+            box-sizing: border-box;
+        }
+        
+        textarea {
+            height: auto;
+            min-height: 60px;
+        }
+        
+        input:focus,
+        textarea:focus,
+        select:focus {
+            border: 2px solid #000;
+        }
+        
+        select {
+            cursor: pointer;
+            appearance: none;
+            background: transparent;
+        }
+        
+        textarea {
+            resize: vertical;
+            min-height: 40px;
+        }
+        
+        .form-row {
+            display: flex;
+            gap: 12px;
+        }
+        
+        .form-row .form-group {
+            flex: 1;
+        }
+        
+        .options-group {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        
+        .option-item {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        
+        .option-item label {
+            margin-bottom: 0;
+            text-transform: none;
+            letter-spacing: 0;
+            font-size: 13px;
+            color: #000;
+        }
+        
+        .checkbox-group {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        
+        .checkbox-item label {
+            margin-bottom: 0;
+            text-transform: none;
+            letter-spacing: 0;
+            font-size: 13px;
+            color: #000;
+        }
+        
+        input[type="radio"],
+        input[type="checkbox"] {
+            width: 10px;
+            height: 10px;
+            border: 1px solid #000;
+            accent-color: #000;
+        }
+        
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #000;
+            color: #fff;
+            border: 1px solid #000;
+            font-size: 12px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            cursor: pointer;
+            margin-top: 8px;
+        }
+        
+        button:hover {
+            background-color: #fff;
+            color: #000;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                margin: 10px;
+                padding: 15px;
+            }
+            
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+            
+            .options-group,
+            .checkbox-group {
+                flex-direction: column;
+                gap: 6px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Create Job Seeker Account</h1>
+        <p class="subtitle">Join us to discover more career opportunities</p>
+        
+        <form id="registrationForm">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="firstname">First Name</label>
+                    <input type="text" id="firstname" name="firstname" required>
+                </div>
+                <div class="form-group">
+                    <label for="lastname">Last Name</label>
+                    <input type="text" id="lastname" name="lastname" required>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="city">City</label>
+                <input type="text" id="city" name="city" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="education">Highest Education</label>
+                <select id="education" name="education" required>
+                    <option value="">Select Education</option>
+                    <option value="High School">High School</option>
+                    <option value="Associate Degree">Associate Degree</option>
+                    <option value="Bachelor's Degree">Bachelor's Degree</option>
+                    <option value="Master's Degree">Master's Degree</option>
+                    <option value="Doctorate">Doctorate</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="experience">Work Experience</label>
+                <select id="experience" name="experience" required>
+                    <option value="">Select</option>
+                    <option value="Fresh Graduate">Fresh Graduate</option>
+                    <option value="1-3 years">1-3 years</option>
+                    <option value="3-5 years">3-5 years</option>
+                    <option value="5-10 years">5-10 years</option>
+                    <option value="10+ years">10+ years</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="industry">Industry</label>
+                <select id="industry" name="industry" required>
+                    <option value="">Loading industries...</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="occupation">Occupation</label>
+                <select id="occupation" name="occupation" required>
+                    <option value="">Loading occupations...</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label>Job Type Preference</label>
+                <div class="checkbox-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="type-fulltime" name="jobtype" value="Full-time">
+                        <label for="type-fulltime">Full-time</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="type-parttime" name="jobtype" value="Part-time">
+                        <label for="type-parttime">Part-time</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="type-intern" name="jobtype" value="Internship">
+                        <label for="type-intern">Internship</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="type-remote" name="jobtype" value="Remote">
+                        <label for="type-remote">Remote</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="display: flex; gap: 10px; margin-top: 8px;">
+                <button type="submit" style="flex: 1;">Create Account</button>
+                <button type="button" id="clearBtn" style="flex: 1; background: #fff; color: #000; border: 1px solid #000;">Clear Form</button>
+            </div>
+        </form>
+    </div>
+    
+    <script>
+        // Form submission handling
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const jobtypes = Array.from(formData.getAll('jobtype'));
+            
+            const data = {
+                firstname: formData.get('firstname'),
+                lastname: formData.get('lastname'),
+                email: formData.get('email'),
+                phone: formData.get('phone'),
+                city: formData.get('city'),
+                education: formData.get('education'),
+                experience: formData.get('experience'),
+                industry: formData.get('industry'),
+                occupation: formData.get('occupation'),
+                jobtypes: jobtypes
+            };
+            
+            console.log('Job seeker information:', data);
+            alert('Account created successfully!');
+        });
+        
+        // Clear form function
+        function clearForm() {
+            const form = document.getElementById('registrationForm');
+            form.reset();
+            console.log('Form cleared');
+            alert('Form cleared!');
+        }
+        
+        // Clear button click event
+        document.getElementById('clearBtn').addEventListener('click', clearForm);
+        
+        // Function to fetch data from API and populate select options
+        async function fetchAndPopulateSelect(url, selectId, valueNick, titleNick) {
+            const select = document.getElementById(selectId);
+            select.innerHTML = '<option value="">Loading...</option>';
+            
+            try {
+                const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
+                
+                select.innerHTML = '<option value="">Select...</option>';
+                
+                if (Array.isArray(data)) {
+                    data.forEach(item => {
+                        const option = document.createElement('option');
+                        option.value = item[valueNick];
+                        option.textContent = item[titleNick];
+                        select.appendChild(option);
+                    });
+                }
+            } catch (error) {
+                console.error('Error fetching data:', error);
+                select.innerHTML = '<option value="">Error loading data</option>';
+            }
+        }
+        
+        // Load industry and occupation data on page load
+        window.addEventListener('DOMContentLoaded', function() {
+            // Load industries
+            fetchAndPopulateSelect(
+                'http://localhost:7887/dataset/industries',
+                'industry',
+                'id',
+                'name'
+            );
+            
+            // Load occupations
+            fetchAndPopulateSelect(
+                'http://localhost:7887/dataset/occupation',
+                'occupation',
+                'id',
+                'name'
+            );
+        });
+        
+        // CLI command support
+        window.clear_form = clearForm;
+        console.log('CLI command registered: clear_form() - used to clear the form');
+    </script>
+</body>
+</html>

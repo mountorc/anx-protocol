@@ -264,6 +264,20 @@ anx registration-form set_form '{"username": "john", "email": "john@example.com"
 anx registration-form set_form '{"username": "john"}' --replace
 ```
 
+#### clear_form
+
+**Description**: Clear all form data and reset to initial state
+
+**Usage**:
+```
+anx <cardKey> clear_form
+```
+
+**Example**:
+```
+anx registration-form clear_form
+```
+
 #### clear
 
 **Description**: Clear content/value; do not reset to default value

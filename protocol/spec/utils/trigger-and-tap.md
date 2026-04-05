@@ -75,6 +75,14 @@ In ANX frontend interaction protocol, trigger and tap configurations define even
         "target_param1": "source_field1",
         "target_param2": "source_field2"
       }
+    },
+    "requestSet": {
+      "method": "POST",
+      "url": "/api/submit",
+      "paramMap": {
+        "param1": "source_field1",
+        "param2": "source_field2"
+      }
     }
   }
 }
@@ -89,6 +97,59 @@ In ANX frontend interaction protocol, trigger and tap configurations define even
 | `updateData` | Data update configuration when tapped |
 | `setTimeout` | Timeout configuration when tapped |
 | `requestSet` | Request configuration when tapped |
+
+### requestSet Configuration
+
+The `requestSet` configuration for tapSet supports the following fields:
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `method` | string | Yes | HTTP request method (e.g., "GET", "POST", "PUT", "DELETE") |
+| `url` | string | Yes | Request URL |
+| `paramMap` | object | No | Parameter mapping from source fields to request parameters |
+
+### Request Execution Function
+
+When a tap event triggers a `requestSet` action, the following process is executed:
+
+1. **Parameter Collection**: The `paramMap` is used to collect parameters from the source fields
+2. **Request Preparation**: The collected parameters are prepared as request data
+3. **Request Execution**: The HTTP request is sent to the specified URL with the collected parameters
+4. **Response Handling**: The response from the server is processed
+
+#### Example Request Execution Function
+
+```javascript
+function executeRequest(requestConfig, sourceData) {
+  // Step 1: Collect parameters using paramMap
+  const params = {};
+  if (requestConfig.paramMap) {
+    Object.keys(requestConfig.paramMap).forEach(targetParam => {
+      const sourceField = requestConfig.paramMap[targetParam];
+      params[targetParam] = sourceData[sourceField];
+    });
+  }
+  
+  // Step 2 & 3: Execute the request
+  return fetch(requestConfig.url, {
+    method: requestConfig.method,
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(params)
+  })
+  .then(response => response.json())
+  .then(data => {
+    // Step 4: Handle response
+    console.log('Request successful:', data);
+    return data;
+  })
+  .catch(error => {
+    console.error('Request failed:', error);
+    throw error;
+  });
+}
+```
 
 ## Usage Examples
 
@@ -145,7 +206,25 @@ In ANX frontend interaction protocol, trigger and tap configurations define even
 }
 ```
 
-### Example 4: Focus Trigger with Request
+### Example 4: Tap with Request
+
+```json
+{
+  "tapSet": {
+    "requestSet": {
+      "method": "POST",
+      "url": "/api/submit-form",
+      "paramMap": {
+        "name": "userName",
+        "email": "userEmail",
+        "phone": "userPhone"
+      }
+    }
+  }
+}
+```
+
+### Example 5: Focus Trigger with Request
 
 ```json
 {
@@ -162,7 +241,7 @@ In ANX frontend interaction protocol, trigger and tap configurations define even
 }
 ```
 
-### Example 5: Submit Trigger with Data Update
+### Example 6: Submit Trigger with Data Update
 
 ```json
 {

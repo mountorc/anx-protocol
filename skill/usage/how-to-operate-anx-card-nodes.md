@@ -2,7 +2,7 @@
 
 ## Overview
 
-This guide provides detailed instructions on how to operate ANX Card Nodes using the ANX Card Node format (`<x kind cardKey>`) and ANX CLI commands.
+This guide provides detailed instructions on how to operate ANX Card Nodes using the ANX Card Node format (`<x cardKind cardKey>`) and ANX CLI commands.
 
 ## Card Node Format
 
@@ -11,13 +11,13 @@ This guide provides detailed instructions on how to operate ANX Card Nodes using
 The ANX Card Node format uses the `<x>` tag with two required attributes:
 
 ```html
-<x kind cardKey>
+<x cardKind cardKey>
   Content area
 </x>
 ```
 
-- **kind**: Specifies the component type (e.g., form, input, button, options, checkbox, etc.)
-- **cardKey**: Unique identifier for the component, used for CLI commands
+- **cardKind**: Specifies the component type (e.g., form, input, button, options, checkbox, etc.)
+- **cardKey**: Unique identifier for the component, used for CLI commands. This is typically a globally unique key generated during card node initialization.
 
 ### Component Types
 
@@ -55,6 +55,7 @@ anx <cardKey> <action> <params>
 | set_form | Set form data | `{"field1": "value1", "field2": "value2"}` |
 | get_value | Get field value | N/A |
 | set_value | Set field value | `{"value": "new value"}` |
+| clear_form | Clear form data | N/A |
 | tap | Trigger button click | N/A |
 
 ## Field Value Formats

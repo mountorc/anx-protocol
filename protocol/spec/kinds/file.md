@@ -2,9 +2,11 @@
 
 ## 概述
 
-文件上传组件用于上传和管理各种类型的文件，支持单文件和多文件上传。
+文件上传组件用于上传和管理各种类型的文件，支持单文件和多文件上传。同时，协议还提供了专门的图片上传组件 `image` 和 `images`，用于处理单张和多张图片的上传与显示。
 
 ## 基本结构
+
+### file 组件
 
 ```json
 {
@@ -18,12 +20,41 @@
 }
 ```
 
+### image 组件
+
+```json
+{
+  "kind": "image",
+  "accept": "image/*",
+  "maxSize": 5242880,
+  "must": false,
+  "value": "图片路径",
+  "preview": true
+}
+```
+
+### images 组件
+
+```json
+{
+  "kind": "images",
+  "multiple": true,
+  "accept": "image/*",
+  "maxSize": 10485760,
+  "must": false,
+  "value": ["图片路径1", "图片路径2"],
+  "preview": true
+}
+```
+
 ## 字段说明
+
+### 通用字段
 
 | 字段名 | 类型 | 必选 | 说明 |
 |-------|------|------|------|
-| kind | string | 是 | 组件类型，固定为 "file" |
-| multiple | boolean | 否 | 是否支持多文件上传，默认为 false |
+| kind | string | 是 | 组件类型，固定为 "file"、"image" 或 "images" |
+| multiple | boolean | 否 | 是否支持多文件上传，默认为 false（仅 file 和 images 组件支持） |
 | accept | string | 否 | 可接受的文件类型，如 ".jpg,.png" 或 "image/*" |
 | maxSize | number | 否 | 文件最大大小（字节），默认为 10MB |
 | must | boolean | 否 | 是否必填，默认为 false |
@@ -75,5 +106,34 @@
   "maxSize": 10485760,
   "preview": true,
   "description": "支持 JPG、PNG 格式，大小不超过 10MB"
+}
+```
+
+### 单张图片上传
+
+```json
+{
+  "kind": "image",
+  "id": "userAvatar",
+  "name": "用户头像",
+  "label": "请上传头像",
+  "maxSize": 5242880,
+  "must": true,
+  "description": "支持 JPG、PNG 格式，大小不超过 5MB"
+}
+```
+
+### 多张图片上传
+
+```json
+{
+  "kind": "images",
+  "id": "gallery",
+  "name": "相册",
+  "label": "请上传图片",
+  "multiple": true,
+  "maxSize": 10485760,
+  "preview": true,
+  "description": "支持 JPG、PNG 格式，每张图片大小不超过 10MB"
 }
 ```
