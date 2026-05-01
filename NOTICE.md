@@ -1,16 +1,17 @@
-ANX Protocol 
- Copyright (c) [杭州字由数据科技有限公司] 
- 
- This work is derived from ANX Protocol ( `https://github.com/mountorc/anx-protocol` ). 
- The original design and specification are copyrighted by the author. 
- 
- You are allowed to: 
- - Use the ANX protocol freely 
- - Implement the protocol in any system 
- - Extend the protocol with custom fields 
- - Distribute and commercialize implementations based on ANX 
- 
- You are NOT allowed to: 
- - Rename the ANX protocol and claim it as your original work 
- - Remove copyright information from the protocol specification 
- - Present a modified version as a new, unrelated protocol without attribution
+ANX Protocol
+Copyright 2026 杭州字由数据科技有限公司
+
+This work is derived from ANX Protocol (https://github.com/mountorc/anx-protocol).
+The original design and specification are copyrighted by the author.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
